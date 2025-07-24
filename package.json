@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "clean-dev": "rmdir /s /q .next 2>nul & npm run dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

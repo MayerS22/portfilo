@@ -111,6 +111,14 @@ const Experience = () => {
 
   const courses = [
     {
+      title: 'Next.js: The Complete Developer\'s Guide',
+      issuer: 'Udemy',
+      date: 'jun 2025 – July 2025, 20 Hours',
+      description: 'Learn how to build a web application from scratch using Next.js, a powerful React framework.',
+      image: '/images/Udemy.jpg',
+      imageAlt: 'Udemy Logo'
+    },
+    {
       title: 'Flutter Course',
       issuer: 'Udemy',
       date: 'Sept. 2023 – Jan. 2024, 53 Hours',
@@ -338,7 +346,7 @@ const Experience = () => {
             <motion.div variants={itemVariants}>
               <motion.div variants={itemVariants} className="flex items-center mb-8">
                 <Award className="text-primary-600 dark:text-primary-400 mr-3" size={24} />
-                <h3 className="text-xl sm:text-2xl font-bold">Training & Certifications</h3>
+                <h3 className="text-xl sm:text-2xl font-bold">Training </h3>
               </motion.div>
 
               <div className="space-y-4 mb-8">
@@ -401,7 +409,7 @@ const Experience = () => {
             <motion.div variants={itemVariants}>
               <motion.div variants={itemVariants} className="flex items-center mb-8">
                 <Award className="text-primary-600 dark:text-primary-400 mr-3" size={24} />
-                <h3 className="text-xl sm:text-2xl font-bold">Courses</h3>
+                <h3 className="text-xl sm:text-2xl font-bold">Courses & Certifications</h3>
               </motion.div>
 
               <div className="space-y-4">
