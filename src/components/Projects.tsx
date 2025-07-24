@@ -9,10 +9,9 @@ const Projects = () => {
     {
       title: 'Speedo Transfer Mobile Application',
       description: 'Secure money transfer app with authentication, fund transfers, and transaction history. Built with Jetpack Compose, Kotlin, MVVM for Banque Misr.',
-      image: '/api/placeholder/400/250',
+      image: '/images/Speedo.png',
       technologies: ['Kotlin', 'Jetpack Compose', 'MVVM', 'Android', 'Firebase'],
       github: 'https://github.com/MayerS22/speedoo',
-      live: 'https://github.com/MayerS22/speedoo',
       category: 'Mobile'
     },
     {
@@ -21,7 +20,6 @@ const Projects = () => {
       image: '/api/placeholder/400/250',
       technologies: ['Flutter', 'Firebase', 'Dart', 'State Management'],
       github: 'https://github.com/MayerS22/E-commerce-Mobile-App',
-      live: 'https://github.com/MayerS22/E-commerce-Mobile-App',
       category: 'Mobile'
     },
     {
@@ -30,7 +28,6 @@ const Projects = () => {
       image: '/api/placeholder/400/250',
       technologies: ['React', 'Node.js', 'Express.js', 'MongoDB', 'JavaScript'],
       github: 'https://github.com/MayerS22/Food_Oredering_Sysytem',
-      live: 'https://github.com/MayerS22/Food_Oredering_Sysytem',
       category: 'Full-Stack'
     },
     {
@@ -39,7 +36,6 @@ const Projects = () => {
       image: '/api/placeholder/400/250',
       technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
       github: 'https://github.com/MayerS22/egypt-tourism-website',
-      live: 'https://github.com/MayerS22/egypt-tourism-website',
       category: 'Frontend'
     }
   ]
@@ -155,15 +151,6 @@ const Projects = () => {
                           >
                             <Github size={20} className="text-gray-800" />
                           </motion.a>
-                          <motion.a
-                            href={project.live}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            whileHover={{ scale: 1.1, rotate: 360 }}
-                            className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg"
-                          >
-                            <ExternalLink size={20} className="text-gray-800" />
-                          </motion.a>
                         </div>
                       </div>
                     </div>
@@ -198,28 +185,17 @@ const Projects = () => {
                       </div>
 
                       {/* Action Buttons */}
-                      <div className="flex space-x-3 mt-auto">
+                      <div className="flex mt-auto">
                         <motion.a
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="flex-1 bg-gray-100 dark:bg-dark-700 hover:bg-gray-200 dark:hover:bg-dark-600 text-gray-700 dark:text-gray-300 text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
+                          className="w-full bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
                         >
                           <Github size={16} />
-                          Code
-                        </motion.a>
-                        <motion.a
-                          href={project.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="flex-1 bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
-                        >
-                          <Play size={16} />
-                          View Project
+                          View Code
                         </motion.a>
                       </div>
                     </div>
