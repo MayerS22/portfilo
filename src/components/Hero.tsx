@@ -27,12 +27,12 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center section-padding pt-20 relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center section-padding pt-16 sm:pt-20 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary-600/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse delay-1000" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl animate-pulse delay-500" />
+        <div className="absolute top-10 sm:top-20 left-4 sm:left-10 w-48 h-48 sm:w-72 sm:h-72 bg-primary-600/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-10 sm:bottom-20 right-4 sm:right-10 w-64 h-64 sm:w-96 sm:h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 sm:w-64 sm:h-64 bg-blue-600/10 rounded-full blur-3xl animate-pulse delay-500" />
       </div>
 
       <div className="container-custom relative z-10">
@@ -45,17 +45,17 @@ const Hero = () => {
           {/* Greeting with Sparkles */}
           <motion.div
             variants={itemVariants}
-            className="flex items-center justify-center gap-2 text-lg text-primary-600 dark:text-primary-400 font-medium mb-4"
+            className="flex items-center justify-center gap-2 text-base sm:text-lg text-primary-600 dark:text-primary-400 font-medium mb-4"
           >
-            <Sparkles className="w-5 h-5" />
+            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
             <AnimatedText text="Hello, I'm" delay={0.5} />
-            <Sparkles className="w-5 h-5" />
+            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
           </motion.div>
 
           {/* Name with Enhanced Animation */}
           <motion.h1
             variants={itemVariants}
-            className="text-5xl md:text-7xl font-bold mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6"
           >
             <span className="gradient-text">
               <AnimatedText text="Mayer Soliman Hedya" delay={1} duration={0.03} />
@@ -65,7 +65,7 @@ const Hero = () => {
           {/* Title with Typewriter Effect */}
           <motion.h2
             variants={itemVariants}
-            className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-8"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8"
           >
             <AnimatedText text="Full-Stack Developer & Software Engineer" delay={2} duration={0.05} />
           </motion.h2>
@@ -73,7 +73,7 @@ const Hero = () => {
           {/* Description */}
           <motion.p
             variants={itemVariants}
-            className="text-lg text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed"
+            className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0"
           >
             I am a passionate full stack developer who thrives on continuous learning and creative problem-solving. 
             I believe that personal growth comes from embracing new challenges and exploring innovative solutions.
@@ -82,7 +82,7 @@ const Hero = () => {
           {/* CTA Buttons with Enhanced Hover Effects */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4 sm:px-0"
           >
             <motion.a
               href="#contact"
@@ -91,10 +91,10 @@ const Hero = () => {
                 boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
               }}
               whileTap={{ scale: 0.95 }}
-              className="btn-primary flex items-center gap-2 group relative overflow-hidden"
+              className="btn-primary flex items-center gap-2 group relative overflow-hidden w-full sm:w-auto justify-center"
             >
               <span className="relative z-10">Get In Touch</span>
-              <ArrowRight size={20} className="relative z-10 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={18} className="relative z-10 group-hover:translate-x-1 transition-transform" />
               <div className="absolute inset-0 bg-gradient-to-r from-primary-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </motion.a>
             <motion.a
@@ -105,9 +105,9 @@ const Hero = () => {
                 boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
               }}
               whileTap={{ scale: 0.95 }}
-              className="btn-secondary flex items-center gap-2 group relative overflow-hidden"
+              className="btn-secondary flex items-center gap-2 group relative overflow-hidden w-full sm:w-auto justify-center"
             >
-              <Download size={20} className="relative z-10 group-hover:animate-bounce" />
+              <Download size={18} className="relative z-10 group-hover:animate-bounce" />
               <span className="relative z-10">Download Resume</span>
             </motion.a>
           </motion.div>
@@ -115,7 +115,7 @@ const Hero = () => {
           {/* Social Links with Enhanced Animations */}
           <motion.div
             variants={itemVariants}
-            className="flex justify-center items-center space-x-6"
+            className="flex justify-center items-center space-x-4 sm:space-x-6 mb-8 sm:mb-12"
           >
             {[
               { href: "https://github.com/MayerS22", icon: Github, label: "GitHub" },
@@ -134,9 +134,9 @@ const Hero = () => {
                   transition: { duration: 0.3 }
                 }}
                 whileTap={{ scale: 0.9 }}
-                className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 p-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+                className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 p-2 sm:p-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
               >
-                <social.icon size={24} />
+                <social.icon size={20} className="sm:w-6 sm:h-6" />
               </motion.a>
             ))}
           </motion.div>
@@ -144,7 +144,7 @@ const Hero = () => {
           {/* Stats with Enhanced Animations */}
           <motion.div
             variants={itemVariants}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16"
           >
             {[
               { number: "4+", label: "Years Experience" },
@@ -160,14 +160,14 @@ const Hero = () => {
                 transition={{ delay: 3 + index * 0.1 }}
               >
                 <motion.div 
-                  className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2"
+                  className="text-2xl sm:text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 3.5 + index * 0.1, type: "spring", stiffness: 200 }}
                 >
                   {stat.number}
                 </motion.div>
-                <div className="text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                <div className="text-sm sm:text-base text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                   {stat.label}
                 </div>
               </motion.div>
