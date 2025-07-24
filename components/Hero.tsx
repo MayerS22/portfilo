@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react'
+import { ArrowRight, Download, Github, Linkedin, Mail, Sparkles } from 'lucide-react'
+import AnimatedText from './ui/AnimatedText'
 
 const Hero = () => {
   const containerVariants = {
@@ -26,36 +27,47 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center section-padding pt-20">
-      <div className="container-custom">
+    <section id="home" className="min-h-screen flex items-center justify-center section-padding pt-20 relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary-600/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl animate-pulse delay-500" />
+      </div>
+
+      <div className="container-custom relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
           className="text-center max-w-4xl mx-auto"
         >
-          {/* Greeting */}
-          <motion.p
+          {/* Greeting with Sparkles */}
+          <motion.div
             variants={itemVariants}
-            className="text-lg text-primary-600 dark:text-primary-400 font-medium mb-4"
+            className="flex items-center justify-center gap-2 text-lg text-primary-600 dark:text-primary-400 font-medium mb-4"
           >
-            👋 Hello, I'm
-          </motion.p>
+            <Sparkles className="w-5 h-5" />
+            <AnimatedText text="Hello, I'm" delay={0.5} />
+            <Sparkles className="w-5 h-5" />
+          </motion.div>
 
-          {/* Name */}
+          {/* Name with Enhanced Animation */}
           <motion.h1
             variants={itemVariants}
             className="text-5xl md:text-7xl font-bold mb-6"
           >
-            <span className="gradient-text">Mayer Soliman Hedya</span>
+            <span className="gradient-text">
+              <AnimatedText text="Mayer Soliman Hedya" delay={1} duration={0.03} />
+            </span>
           </motion.h1>
 
-          {/* Title */}
+          {/* Title with Typewriter Effect */}
           <motion.h2
             variants={itemVariants}
             className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-8"
           >
-            Full-Stack Developer & Software Engineer
+            <AnimatedText text="Full-Stack Developer & Software Engineer" delay={2} duration={0.05} />
           </motion.h2>
 
           {/* Description */}
@@ -67,87 +79,99 @@ const Hero = () => {
             I believe that personal growth comes from embracing new challenges and exploring innovative solutions.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons with Enhanced Hover Effects */}
           <motion.div
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
             <motion.a
               href="#contact"
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+              }}
               whileTap={{ scale: 0.95 }}
-              className="btn-primary flex items-center gap-2"
+              className="btn-primary flex items-center gap-2 group relative overflow-hidden"
             >
-              Get In Touch
-              <ArrowRight size={20} />
+              <span className="relative z-10">Get In Touch</span>
+              <ArrowRight size={20} className="relative z-10 group-hover:translate-x-1 transition-transform" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </motion.a>
             <motion.a
               href="/resume.pdf"
               target="_blank"
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+              }}
               whileTap={{ scale: 0.95 }}
-              className="btn-secondary flex items-center gap-2"
+              className="btn-secondary flex items-center gap-2 group relative overflow-hidden"
             >
-              <Download size={20} />
-              Download Resume
+              <Download size={20} className="relative z-10 group-hover:animate-bounce" />
+              <span className="relative z-10">Download Resume</span>
             </motion.a>
           </motion.div>
 
-          {/* Social Links */}
+          {/* Social Links with Enhanced Animations */}
           <motion.div
             variants={itemVariants}
             className="flex justify-center items-center space-x-6"
           >
-            <motion.a
-              href="https://github.com/MayerS22"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1, y: -2 }}
-              className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
-            >
-              <Github size={24} />
-            </motion.a>
-            <motion.a
-              href="https://www.linkedin.com/in/mayer-frieg-7a0368226/"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1, y: -2 }}
-              className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
-            >
-              <Linkedin size={24} />
-            </motion.a>
-            <motion.a
-              href="mailto:mayerfrieg@outlook.com"
-              whileHover={{ scale: 1.1, y: -2 }}
-              className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
-            >
-              <Mail size={24} />
-            </motion.a>
+            {[
+              { href: "https://github.com/MayerS22", icon: Github, label: "GitHub" },
+              { href: "https://www.linkedin.com/in/mayer-frieg-7a0368226/", icon: Linkedin, label: "LinkedIn" },
+              { href: "mailto:mayerfrieg@outlook.com", icon: Mail, label: "Email" }
+            ].map((social, index) => (
+              <motion.a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ 
+                  scale: 1.2, 
+                  y: -5,
+                  rotate: 360,
+                  transition: { duration: 0.3 }
+                }}
+                whileTap={{ scale: 0.9 }}
+                className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 p-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+              >
+                <social.icon size={24} />
+              </motion.a>
+            ))}
           </motion.div>
 
-          {/* Stats */}
+          {/* Stats with Enhanced Animations */}
           <motion.div
             variants={itemVariants}
             className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16"
           >
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">
-                4+
-              </div>
-              <div className="text-gray-600 dark:text-gray-400">Years Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">
-                10+
-              </div>
-              <div className="text-gray-600 dark:text-gray-400">Projects Completed</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">
-                12+
-              </div>
-              <div className="text-gray-600 dark:text-gray-400">Technologies</div>
-            </div>
+            {[
+              { number: "4+", label: "Years Experience" },
+              { number: "10+", label: "Projects Completed" },
+              { number: "12+", label: "Technologies" }
+            ].map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                className="text-center group"
+                whileHover={{ scale: 1.05 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 3 + index * 0.1 }}
+              >
+                <motion.div 
+                  className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 3.5 + index * 0.1, type: "spring", stiffness: 200 }}
+                >
+                  {stat.number}
+                </motion.div>
+                <div className="text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </motion.div>
       </div>

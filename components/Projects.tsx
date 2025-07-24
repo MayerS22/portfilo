@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ExternalLink, Github, Play, Code, Database, Globe, Smartphone } from 'lucide-react'
+import GlareCard from './ui/GlareCard'
 
 const Projects = () => {
   const projects = [
@@ -135,90 +136,95 @@ const Projects = () => {
               <motion.div
                 key={project.title}
                 variants={itemVariants}
-                whileHover={{ y: -5 }}
-                className="card overflow-hidden group"
+                whileHover={{ y: -10 }}
+                className="h-full"
               >
-                {/* Project Image */}
-                <div className="relative h-48 bg-gradient-to-br from-primary-100 to-purple-100 dark:from-primary-900/20 dark:to-purple-900/20 flex items-center justify-center">
-                  <CategoryIcon size={64} className="text-primary-600 dark:text-primary-400" />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                    <div className="flex space-x-4">
-                      <motion.a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1 }}
-                        className="w-10 h-10 bg-white rounded-full flex items-center justify-center"
-                      >
-                        <Github size={20} className="text-gray-800" />
-                      </motion.a>
-                      <motion.a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1 }}
-                        className="w-10 h-10 bg-white rounded-full flex items-center justify-center"
-                      >
-                        <ExternalLink size={20} className="text-gray-800" />
-                      </motion.a>
+                <GlareCard className="h-full">
+                  <div className="card overflow-hidden group h-full">
+                    {/* Project Image */}
+                    <div className="relative h-48 bg-gradient-to-br from-primary-100 to-purple-100 dark:from-primary-900/20 dark:to-purple-900/20 flex items-center justify-center">
+                      <CategoryIcon size={64} className="text-primary-600 dark:text-primary-400" />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div className="flex space-x-4">
+                          <motion.a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.1, rotate: 360 }}
+                            className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg"
+                          >
+                            <Github size={20} className="text-gray-800" />
+                          </motion.a>
+                          <motion.a
+                            href={project.live}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.1, rotate: 360 }}
+                            className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg"
+                          >
+                            <ExternalLink size={20} className="text-gray-800" />
+                          </motion.a>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Project Content */}
+                    <div className="p-6 flex flex-col h-full">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(project.category)}`}>
+                          {project.category}
+                        </span>
+                      </div>
+                      
+                      <h3 className="text-xl font-bold mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-200">
+                        {project.title}
+                      </h3>
+                      
+                      <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed flex-grow">
+                        {project.description}
+                      </p>
+
+                      {/* Technologies */}
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.technologies.map((tech) => (
+                          <motion.span
+                            key={tech}
+                            whileHover={{ scale: 1.05 }}
+                            className="px-2 py-1 bg-gray-100 dark:bg-dark-700 text-gray-700 dark:text-gray-300 text-xs rounded"
+                          >
+                            {tech}
+                          </motion.span>
+                        ))}
+                      </div>
+
+                      {/* Action Buttons */}
+                      <div className="flex space-x-3 mt-auto">
+                        <motion.a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="flex-1 bg-gray-100 dark:bg-dark-700 hover:bg-gray-200 dark:hover:bg-dark-600 text-gray-700 dark:text-gray-300 text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
+                        >
+                          <Github size={16} />
+                          Code
+                        </motion.a>
+                        <motion.a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="flex-1 bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
+                        >
+                          <Play size={16} />
+                          View Project
+                        </motion.a>
+                      </div>
                     </div>
                   </div>
-                </div>
-
-                {/* Project Content */}
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(project.category)}`}>
-                      {project.category}
-                    </span>
-                  </div>
-                  
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-200">
-                    {project.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 bg-gray-100 dark:bg-dark-700 text-gray-700 dark:text-gray-300 text-xs rounded"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Action Buttons */}
-                  <div className="flex space-x-3">
-                    <motion.a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex-1 bg-gray-100 dark:bg-dark-700 hover:bg-gray-200 dark:hover:bg-dark-600 text-gray-700 dark:text-gray-300 text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
-                    >
-                      <Github size={16} />
-                      Code
-                    </motion.a>
-                    <motion.a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex-1 bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
-                    >
-                      <Play size={16} />
-                      View Project
-                    </motion.a>
-                  </div>
-                </div>
+                </GlareCard>
               </motion.div>
             )
           })}
@@ -236,12 +242,16 @@ const Projects = () => {
             href="https://github.com/MayerS22"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ 
+              scale: 1.05,
+              boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+            }}
             whileTap={{ scale: 0.95 }}
-            className="btn-primary inline-flex items-center gap-2"
+            className="btn-primary inline-flex items-center gap-2 group relative overflow-hidden"
           >
-            View More Projects
-            <ExternalLink size={20} />
+            <span className="relative z-10">View More Projects</span>
+            <ExternalLink size={20} className="relative z-10 group-hover:translate-x-1 transition-transform" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </motion.a>
         </motion.div>
       </div>
