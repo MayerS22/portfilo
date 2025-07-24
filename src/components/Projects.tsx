@@ -3,41 +3,76 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, Github, Play, Code, Database, Globe, Smartphone } from 'lucide-react'
 import GlareCard from './ui/GlareCard'
+import Image from 'next/image'
 
 const Projects = () => {
+  const categories = [
+    {
+      name: 'Full-Stack',
+      icon: Code,
+      color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400'
+    },
+    {
+      name: 'Web',
+      icon: Globe,
+      color: 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400'
+    },
+    {
+      name: 'Mobile',
+      icon: Smartphone,
+      color: 'bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-400'
+    },
+    {
+      name: 'Frontend',
+      icon: Globe,
+      color: 'bg-purple-100 text-purple-800 dark:bg-purple-900/20 dark:text-purple-400'
+    },
+    {
+      name: 'Backend',
+      icon: Database,
+      color: 'bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400'
+    },
+    {
+      name: 'AI/ML',
+      icon: Code,
+      color: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/20 dark:text-indigo-400'
+    }
+  ]
+
   const projects = [
     {
+      title: 'AutoInsight - Business Intelligence Platform',
+      description: 'A+ Graduation project: Advanced data analysis and machine learning platform designed to help businesses navigate challenges during layoffs and restructuring. Features predictive analytics, workforce forecasting, and real-time decision-making tools.',
+      image: '/images/AutoInsight.png',
+      technologies: ['React', 'Vite', 'Tailwind CSS', 'Redux', 'Python', 'Machine Learning', 'Data Analysis', 'Forecasting Models', 'Interactive Dashboards', 'Real-time Analytics'],
+      github: 'https://github.com/MayerS22/AutoInsight',
+      categories: ['Full-Stack', 'Web', 'AI/ML']
+    },
+    {
+      title: 'Taskify - Task Management App',
+      description: 'Smart, simple, and stylish task management application for daily organization, deadline reminders, and personal productivity. Built with TypeScript and modern web technologies.',
+      image: '/images/Taskify.png',
+      technologies: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'SQLite', 'Authentication', 'Real-time Updates'],
+      github: 'https://github.com/MayerS22/Taskify',
+      categories: ['Full-Stack', 'Web']
+    },
+    {
       title: 'Speedo Transfer Mobile Application',
-      description: 'Secure money transfer app with authentication, fund transfers, and transaction history. Built with Jetpack Compose, Kotlin, MVVM for Banque Misr.',
+      description: 'Completed secure money transfer application for Banque Misr. Features include user authentication, fund transfers, transaction history, and real-time notifications. Built with Jetpack Compose, Kotlin, and MVVM architecture.',
       image: '/images/Speedo.png',
-      technologies: ['Kotlin', 'Jetpack Compose', 'MVVM', 'Android', 'Firebase'],
+      technologies: ['Kotlin', 'Jetpack Compose', 'MVVM', 'Android', 'Firebase', 'REST APIs', 'Material Design', 'Biometric Auth'],
       github: 'https://github.com/MayerS22/speedoo',
-      category: 'Mobile'
+      categories: ['Mobile', 'Frontend']
     },
     {
       title: 'E-Commerce Mobile Application',
       description: 'Mobile e-commerce app with user authentication and real-time product data. Built with Flutter and Firebase.',
-      image: '/api/placeholder/400/250',
-      technologies: ['Flutter', 'Firebase', 'Dart', 'State Management'],
+      image: '/images/ecommerce-app.jpg',
+      technologies: ['Flutter', 'Firebase', 'Dart', 'State Management', 'Cloud Firestore', 'Authentication', 'Payment Integration', 'Push Notifications'],
       github: 'https://github.com/MayerS22/E-commerce-Mobile-App',
-      category: 'Mobile'
-    },
-    {
-      title: 'Food Ordering Website',
-      description: 'Full-stack food ordering platform with user authentication and real-time order tracking. Built with React and Node.js.',
-      image: '/api/placeholder/400/250',
-      technologies: ['React', 'Node.js', 'Express.js', 'MongoDB', 'JavaScript'],
-      github: 'https://github.com/MayerS22/Food_Oredering_Sysytem',
-      category: 'Full-Stack'
-    },
-    {
-      title: 'Tourism in Egypt Website',
-      description: 'Responsive tourism website showcasing Egypt\'s attractions. Built with HTML, CSS, and JavaScript.',
-      image: '/api/placeholder/400/250',
-      technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
-      github: 'https://github.com/MayerS22/egypt-tourism-website',
-      category: 'Frontend'
+      categories: ['Mobile', 'Full-Stack']
     }
+    
   ]
 
   const containerVariants = {
@@ -62,37 +97,13 @@ const Projects = () => {
   }
 
   const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case 'Full-Stack':
-        return Code
-      case 'Frontend':
-        return Globe
-      case 'Backend':
-        return Database
-      case 'Mobile':
-        return Smartphone
-      case 'AI/ML':
-        return Code
-      default:
-        return Code
-    }
+    const foundCategory = categories.find(cat => cat.name === category)
+    return foundCategory ? foundCategory.icon : Code
   }
 
   const getCategoryColor = (category: string) => {
-    switch (category) {
-      case 'Full-Stack':
-        return 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400'
-      case 'Frontend':
-        return 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400'
-      case 'Backend':
-        return 'bg-purple-100 text-purple-800 dark:bg-purple-900/20 dark:text-purple-400'
-      case 'Mobile':
-        return 'bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-400'
-      case 'AI/ML':
-        return 'bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400'
-      default:
-        return 'bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400'
-    }
+    const foundCategory = categories.find(cat => cat.name === category)
+    return foundCategory ? foundCategory.color : 'bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400'
   }
 
   return (
@@ -127,7 +138,7 @@ const Projects = () => {
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {projects.map((project, index) => {
-            const CategoryIcon = getCategoryIcon(project.category)
+            const CategoryIcon = getCategoryIcon(project.categories[0])
             return (
               <motion.div
                 key={project.title}
@@ -138,8 +149,18 @@ const Projects = () => {
                 <GlareCard className="h-full">
                   <div className="card overflow-hidden group h-full">
                     {/* Project Image */}
-                    <div className="relative h-48 bg-gradient-to-br from-primary-100 to-purple-100 dark:from-primary-900/20 dark:to-purple-900/20 flex items-center justify-center">
-                      <CategoryIcon size={64} className="text-primary-600 dark:text-primary-400" />
+                    <div className="relative h-48 bg-gradient-to-br from-primary-100 to-purple-100 dark:from-primary-900/20 dark:to-purple-900/20 flex items-center justify-center overflow-hidden">
+                      {project.image && project.image !== '/api/placeholder/400/250' ? (
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          width={400}
+                          height={250}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <CategoryIcon size={64} className="text-primary-600 dark:text-primary-400" />
+                      )}
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                         <div className="flex space-x-4">
                           <motion.a
@@ -156,47 +177,35 @@ const Projects = () => {
                     </div>
 
                     {/* Project Content */}
-                    <div className="p-6 flex flex-col h-full">
+                    <div className="p-6 flex flex-col">
                       <div className="flex items-center justify-between mb-3">
-                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(project.category)}`}>
-                          {project.category}
-                        </span>
+                        <div className="flex flex-wrap gap-2">
+                          {project.categories.map((category) => (
+                            <span key={category} className={`px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(category)}`}>
+                              {category}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                       
                       <h3 className="text-xl font-bold mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-200">
                         {project.title}
                       </h3>
                       
-                      <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed flex-grow">
+                      <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">
                         {project.description}
                       </p>
 
                       {/* Technologies */}
-                      <div className="flex flex-wrap gap-2 mb-4">
+                      <div className="flex flex-wrap gap-2">
                         {project.technologies.map((tech) => (
-                          <motion.span
+                          <span
                             key={tech}
-                            whileHover={{ scale: 1.05 }}
-                            className="px-2 py-1 bg-gray-100 dark:bg-dark-700 text-gray-700 dark:text-gray-300 text-xs rounded"
+                            className="px-3 py-1 bg-gradient-to-r from-primary-100 to-primary-50 dark:from-primary-900/20 dark:to-primary-800/20 text-primary-700 dark:text-primary-300 text-xs rounded-full font-medium border border-primary-200/50 dark:border-primary-700/50 hover:from-primary-200 hover:to-primary-100 dark:hover:from-primary-800/30 dark:hover:to-primary-700/30 transition-all duration-300"
                           >
                             {tech}
-                          </motion.span>
+                          </span>
                         ))}
-                      </div>
-
-                      {/* Action Buttons */}
-                      <div className="flex mt-auto">
-                        <motion.a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="w-full bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
-                        >
-                          <Github size={16} />
-                          View Code
-                        </motion.a>
                       </div>
                     </div>
                   </div>
