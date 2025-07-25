@@ -10,32 +10,32 @@ const Projects = () => {
     {
       name: 'Full-Stack',
       icon: Code,
-      color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400'
+      color: 'bg-blue-900/20 text-blue-400'
     },
     {
       name: 'Web',
       icon: Globe,
-      color: 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400'
+      color: 'bg-green-900/20 text-green-400'
     },
     {
       name: 'Mobile',
       icon: Smartphone,
-      color: 'bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-400'
+      color: 'bg-orange-900/20 text-orange-400'
     },
     {
       name: 'Frontend',
       icon: Globe,
-      color: 'bg-purple-100 text-purple-800 dark:bg-purple-900/20 dark:text-purple-400'
+      color: 'bg-purple-900/20 text-purple-400'
     },
     {
       name: 'Backend',
       icon: Database,
-      color: 'bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400'
+      color: 'bg-red-900/20 text-red-400'
     },
     {
       name: 'AI/ML',
       icon: Code,
-      color: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/20 dark:text-indigo-400'
+      color: 'bg-indigo-900/20 text-indigo-400'
     }
   ]
 
@@ -103,7 +103,7 @@ const Projects = () => {
 
   const getCategoryColor = (category: string) => {
     const foundCategory = categories.find(cat => cat.name === category)
-    return foundCategory ? foundCategory.color : 'bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400'
+    return foundCategory ? foundCategory.color : 'bg-gray-900/20 text-gray-400'
   }
 
   return (
@@ -118,13 +118,13 @@ const Projects = () => {
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl font-bold mb-4"
+            className="text-4xl font-bold mb-4 text-white"
           >
             Featured Projects
           </motion.h2>
           <motion.p 
             variants={itemVariants}
-            className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+            className="text-xl text-gray-400 max-w-2xl mx-auto"
           >
             A showcase of my recent work and technical expertise
           </motion.p>
@@ -149,7 +149,7 @@ const Projects = () => {
                 <GlareCard className="h-full">
                   <div className="card overflow-hidden group h-full">
                     {/* Project Image */}
-                    <div className="relative h-48 bg-gradient-to-br from-primary-100 to-purple-100 dark:from-primary-900/20 dark:to-purple-900/20 flex items-center justify-center overflow-hidden">
+                    <div className="relative h-48 bg-gradient-to-br from-blue-900/20 to-purple-900/20 flex items-center justify-center overflow-hidden">
                       {project.image && project.image !== '/api/placeholder/400/250' ? (
                         <Image
                           src={project.image}
@@ -159,7 +159,7 @@ const Projects = () => {
                           className="w-full h-full object-cover"
                         />
                       ) : (
-                        <CategoryIcon size={64} className="text-primary-600 dark:text-primary-400" />
+                        <CategoryIcon size={64} className="text-blue-400" />
                       )}
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                         <div className="flex space-x-4">
@@ -188,11 +188,11 @@ const Projects = () => {
                         </div>
                       </div>
                       
-                      <h3 className="text-xl font-bold mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-200">
+                      <h3 className="text-xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors duration-200">
                         {project.title}
                       </h3>
                       
-                      <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">
+                      <p className="text-gray-400 text-sm mb-4 leading-relaxed">
                         {project.description}
                       </p>
 
@@ -201,7 +201,7 @@ const Projects = () => {
                         {project.technologies.map((tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 bg-gradient-to-r from-primary-100 to-primary-50 dark:from-primary-900/20 dark:to-primary-800/20 text-primary-700 dark:text-primary-300 text-xs rounded-full font-medium border border-primary-200/50 dark:border-primary-700/50 hover:from-primary-200 hover:to-primary-100 dark:hover:from-primary-800/30 dark:hover:to-primary-700/30 transition-all duration-300"
+                            className="px-3 py-1 bg-gradient-to-r from-blue-900/20 to-blue-800/20 text-blue-300 text-xs rounded-full font-medium border border-blue-700/50 hover:from-blue-800/30 hover:to-blue-700/30 transition-all duration-300 shadow-sm"
                           >
                             {tech}
                           </span>
@@ -236,7 +236,7 @@ const Projects = () => {
           >
             <span className="relative z-10">View More Projects</span>
             <ExternalLink size={20} className="relative z-10 group-hover:translate-x-1 transition-transform" />
-            <div className="absolute inset-0 bg-gradient-to-r from-primary-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </motion.a>
         </motion.div>
       </div>

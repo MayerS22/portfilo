@@ -111,10 +111,10 @@ const Experience = () => {
 
   const courses = [
     {
-      title: 'Next.js: The Complete Developer\'s Guide',
+      title: 'Nest.js: The Complete Developer\'s Guide',
       issuer: 'Udemy',
       date: 'jun 2025 – July 2025, 20 Hours',
-      description: 'Learn how to build a web application from scratch using Next.js, a powerful React framework.',
+      description: 'Learn how to build a web application from scratch using Nest.js, a powerful Node.js framework.',
       image: '/images/Udemy.jpg',
       imageAlt: 'Udemy Logo'
     },
@@ -158,7 +158,7 @@ const Experience = () => {
   }
 
   return (
-    <section id="experience" className="section-padding bg-gray-50 dark:bg-dark-800">
+    <section id="experience" className="section-padding">
       <div className="container-custom">
         <motion.div
           variants={containerVariants}
@@ -175,100 +175,14 @@ const Experience = () => {
           </motion.h2>
           <motion.p 
             variants={itemVariants}
-            className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+            className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto"
           >
             My professional journey and academic background
           </motion.p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Work Experience */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <motion.div variants={itemVariants} className="flex items-center mb-8">
-              <Briefcase className="text-primary-600 dark:text-primary-400 mr-3" size={24} />
-              <h3 className="text-xl sm:text-2xl font-bold">Work Experience</h3>
-            </motion.div>
-
-            <div className="space-y-6 sm:space-y-8">
-              {experiences.map((exp, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  className="card p-6 relative group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-                >
-                  <div className="flex items-start gap-4 sm:gap-6">
-                    {/* Company Logo */}
-                    <div className="flex-shrink-0">
-                      <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-2xl group-hover:scale-105 transition-all duration-300">
-                        {/* Gradient overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-100/30 dark:to-gray-600/30 rounded-2xl"></div>
-                        
-                        {exp.image ? (
-                          <Image
-                            src={exp.image}
-                            alt={exp.imageAlt}
-                            width={80}
-                            height={80}
-                            className="relative z-10 w-full h-full object-contain p-0 group-hover:scale-110 transition-transform duration-300"
-                            onError={(e) => {
-                              const target = e.target as HTMLImageElement;
-                              target.style.display = 'none';
-                              const fallback = target.nextElementSibling as HTMLElement;
-                              if (fallback) fallback.style.display = 'flex';
-                            }}
-                          />
-                        ) : null}
-                        <Building className="relative z-10 w-8 h-8 text-gray-400 group-hover:text-primary-500 transition-colors duration-300" style={{ display: exp.image ? 'none' : 'flex' }} />
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="flex-1 min-w-0">
-                      <div className="mb-3">
-                        <h4 className="text-lg sm:text-xl font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
-                          {exp.title}
-                        </h4>
-                        <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm mb-1">
-                          <Building size={14} className="mr-2 flex-shrink-0" />
-                          <span className="truncate font-medium">{exp.company}</span>
-                        </div>
-                        <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm mb-1">
-                          <MapPin size={14} className="mr-2 flex-shrink-0" />
-                          <span className="truncate">{exp.location}</span>
-                        </div>
-                        <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm">
-                          <Calendar size={14} className="mr-2 flex-shrink-0" />
-                          <span className="truncate">{exp.period}</span>
-                        </div>
-                      </div>
-                      
-                      <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-                        {exp.description}
-                      </p>
-
-                      <div className="flex flex-wrap gap-2">
-                        {exp.technologies.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-3 py-1 bg-gradient-to-r from-primary-100 to-primary-50 dark:from-primary-900/20 dark:to-primary-800/20 text-primary-700 dark:text-primary-300 text-xs rounded-full font-medium border border-primary-200/50 dark:border-primary-700/50 hover:from-primary-200 hover:to-primary-100 dark:hover:from-primary-800/30 dark:hover:to-primary-700/30 transition-all duration-300"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Education & Certifications */}
+          {/* Left Column - Education & Work Experience */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -278,7 +192,7 @@ const Experience = () => {
             {/* Education */}
             <motion.div variants={itemVariants} className="mb-12">
               <motion.div variants={itemVariants} className="flex items-center mb-8">
-                <GraduationCap className="text-primary-600 dark:text-primary-400 mr-3" size={24} />
+                <GraduationCap className="text-blue-400 mr-3" size={24} />
                 <h3 className="text-xl sm:text-2xl font-bold">Education</h3>
               </motion.div>
 
@@ -292,9 +206,9 @@ const Experience = () => {
                     <div className="flex items-start gap-4 sm:gap-6">
                       {/* Institution Logo */}
                       <div className="flex-shrink-0">
-                        <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-2xl group-hover:scale-105 transition-all duration-300">
+                        <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl shadow-lg border border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-2xl group-hover:scale-105 transition-all duration-300">
                           {/* Gradient overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-100/30 dark:to-gray-600/30 rounded-2xl"></div>
+                          <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-600/30 rounded-2xl"></div>
                           
                           {edu.image ? (
                             <Image
@@ -311,28 +225,28 @@ const Experience = () => {
                               }}
                             />
                           ) : null}
-                          <GraduationCap className="relative z-10 w-8 h-8 text-gray-400 group-hover:text-primary-500 transition-colors duration-300" style={{ display: edu.image ? 'none' : 'flex' }} />
+                          <GraduationCap className="relative z-10 w-8 h-8 text-gray-400 group-hover:text-blue-400 transition-colors duration-300" style={{ display: edu.image ? 'none' : 'flex' }} />
                         </div>
                       </div>
 
                       {/* Content */}
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-lg sm:text-xl font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
+                        <h4 className="text-lg sm:text-xl font-semibold mb-2 text-white group-hover:text-blue-400 transition-colors duration-300">
                           {edu.title}
                         </h4>
-                        <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm mb-1">
+                        <div className="flex items-center text-gray-400 text-sm mb-1">
                           <Building size={14} className="mr-2 flex-shrink-0" />
                           <span className="truncate font-medium">{edu.institution}</span>
                         </div>
-                        <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm mb-1">
+                        <div className="flex items-center text-gray-400 text-sm mb-1">
                           <MapPin size={14} className="mr-2 flex-shrink-0" />
                           <span className="truncate">{edu.location}</span>
                         </div>
-                        <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm mb-3">
+                        <div className="flex items-center text-gray-400 text-sm mb-3">
                           <Calendar size={14} className="mr-2 flex-shrink-0" />
                           <span className="truncate">{edu.period}</span>
                         </div>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <p className="text-sm text-gray-400 leading-relaxed">
                           {edu.description}
                         </p>
                       </div>
@@ -342,10 +256,99 @@ const Experience = () => {
               </div>
             </motion.div>
 
+            {/* Work Experience */}
+            <motion.div variants={itemVariants}>
+              <motion.div variants={itemVariants} className="flex items-center mb-8">
+                <Briefcase className="text-blue-400 mr-3" size={24} />
+                <h3 className="text-xl sm:text-2xl font-bold">Work Experience</h3>
+              </motion.div>
+
+              <div className="space-y-6 sm:space-y-8">
+                {experiences.map((exp, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    className="card p-6 relative group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                  >
+                    <div className="flex items-start gap-4 sm:gap-6">
+                      {/* Company Logo */}
+                      <div className="flex-shrink-0">
+                        <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl shadow-lg border border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-2xl group-hover:scale-105 transition-all duration-300">
+                          {/* Gradient overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-600/30 rounded-2xl"></div>
+                          
+                          {exp.image ? (
+                            <Image
+                              src={exp.image}
+                              alt={exp.imageAlt}
+                              width={80}
+                              height={80}
+                              className="relative z-10 w-full h-full object-contain p-0 group-hover:scale-110 transition-transform duration-300"
+                              onError={(e) => {
+                                const target = e.target as HTMLImageElement;
+                                target.style.display = 'none';
+                                const fallback = target.nextElementSibling as HTMLElement;
+                                if (fallback) fallback.style.display = 'flex';
+                              }}
+                            />
+                          ) : null}
+                          <Building className="relative z-10 w-8 h-8 text-gray-400 group-hover:text-blue-400 transition-colors duration-300" style={{ display: exp.image ? 'none' : 'flex' }} />
+                        </div>
+                      </div>
+
+                      {/* Content */}
+                      <div className="flex-1 min-w-0">
+                        <div className="mb-3">
+                          <h4 className="text-lg sm:text-xl font-semibold mb-2 text-white group-hover:text-blue-400 transition-colors duration-300">
+                            {exp.title}
+                          </h4>
+                          <div className="flex items-center text-gray-400 text-sm mb-1">
+                            <Building size={14} className="mr-2 flex-shrink-0" />
+                            <span className="truncate font-medium">{exp.company}</span>
+                          </div>
+                          <div className="flex items-center text-gray-400 text-sm mb-1">
+                            <MapPin size={14} className="mr-2 flex-shrink-0" />
+                            <span className="truncate">{exp.location}</span>
+                          </div>
+                          <div className="flex items-center text-gray-400 text-sm">
+                            <Calendar size={14} className="mr-2 flex-shrink-0" />
+                            <span className="truncate">{exp.period}</span>
+                          </div>
+                        </div>
+                        
+                        <p className="text-sm sm:text-base text-gray-400 mb-4 leading-relaxed">
+                          {exp.description}
+                        </p>
+
+                        <div className="flex flex-wrap gap-2">
+                          {exp.technologies.map((tech) => (
+                            <span
+                              key={tech}
+                              className="px-3 py-1 bg-gradient-to-r from-blue-900/20 to-blue-800/20 text-blue-300 text-xs rounded-full font-medium border border-blue-700/50 hover:from-blue-800/30 hover:to-blue-700/30 transition-all duration-300"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Column - Certifications & Courses */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {/* Certifications */}
             <motion.div variants={itemVariants}>
               <motion.div variants={itemVariants} className="flex items-center mb-8">
-                <Award className="text-primary-600 dark:text-primary-400 mr-3" size={24} />
+                <Award className="text-blue-400 mr-3" size={24} />
                 <h3 className="text-xl sm:text-2xl font-bold">Training </h3>
               </motion.div>
 
@@ -359,9 +362,9 @@ const Experience = () => {
                     <div className="flex items-start gap-3 sm:gap-4">
                       {/* Certification Logo */}
                       <div className="flex-shrink-0">
-                        <div className="relative w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 rounded-xl shadow-md border border-gray-200/50 dark:border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+                        <div className="relative w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl shadow-md border border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
                           {/* Gradient overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-100/30 dark:to-gray-600/30 rounded-xl"></div>
+                          <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-600/30 rounded-xl"></div>
                           
                           {cert.image ? (
                             <Image
@@ -378,24 +381,24 @@ const Experience = () => {
                               }}
                             />
                           ) : null}
-                          <Award className="relative z-10 w-6 h-6 text-gray-400 group-hover:text-primary-500 transition-colors duration-300" style={{ display: cert.image ? 'none' : 'flex' }} />
+                          <Award className="relative z-10 w-6 h-6 text-gray-400 group-hover:text-blue-400 transition-colors duration-300" style={{ display: cert.image ? 'none' : 'flex' }} />
                         </div>
                       </div>
 
                       {/* Content */}
                       <div className="flex-1 min-w-0">
                         <div className="flex items-start justify-between mb-2">
-                          <h4 className="font-semibold text-sm sm:text-base text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
+                          <h4 className="font-semibold text-sm sm:text-base text-white group-hover:text-blue-400 transition-colors duration-300">
                             {cert.title}
                           </h4>
-                          <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 flex-shrink-0 ml-2">
+                          <span className="text-xs sm:text-sm text-gray-500 flex-shrink-0 ml-2">
                             {cert.date}
                           </span>
                         </div>
-                        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-2 font-medium">
+                        <p className="text-xs sm:text-sm text-gray-400 mb-2 font-medium">
                           {cert.issuer}
                         </p>
-                        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
                           {cert.description}
                         </p>
                       </div>
@@ -408,7 +411,7 @@ const Experience = () => {
             {/* Courses */}
             <motion.div variants={itemVariants}>
               <motion.div variants={itemVariants} className="flex items-center mb-8">
-                <Award className="text-primary-600 dark:text-primary-400 mr-3" size={24} />
+                <Award className="text-blue-400 mr-3" size={24} />
                 <h3 className="text-xl sm:text-2xl font-bold">Courses & Certifications</h3>
               </motion.div>
 
@@ -422,9 +425,9 @@ const Experience = () => {
                     <div className="flex items-start gap-3 sm:gap-4">
                       {/* Course Logo */}
                       <div className="flex-shrink-0">
-                        <div className="relative w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 rounded-xl shadow-md border border-gray-200/50 dark:border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+                        <div className="relative w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl shadow-md border border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
                           {/* Gradient overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-100/30 dark:to-gray-600/30 rounded-xl"></div>
+                          <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-600/30 rounded-xl"></div>
                           
                           {course.image ? (
                             <Image
@@ -441,24 +444,24 @@ const Experience = () => {
                               }}
                             />
                           ) : null}
-                          <Award className="relative z-10 w-6 h-6 text-gray-400 group-hover:text-primary-500 transition-colors duration-300" style={{ display: course.image ? 'none' : 'flex' }} />
+                          <Award className="relative z-10 w-6 h-6 text-gray-400 group-hover:text-blue-400 transition-colors duration-300" style={{ display: course.image ? 'none' : 'flex' }} />
                         </div>
                       </div>
 
                       {/* Content */}
                       <div className="flex-1 min-w-0">
                         <div className="flex items-start justify-between mb-2">
-                          <h4 className="font-semibold text-sm sm:text-base text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
+                          <h4 className="font-semibold text-sm sm:text-base text-white group-hover:text-blue-400 transition-colors duration-300">
                             {course.title}
                           </h4>
-                          <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 flex-shrink-0 ml-2">
+                          <span className="text-xs sm:text-sm text-gray-500 flex-shrink-0 ml-2">
                             {course.date}
                           </span>
                         </div>
-                        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-2 font-medium">
+                        <p className="text-xs sm:text-sm text-gray-400 mb-2 font-medium">
                           {course.issuer}
                         </p>
-                        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
                           {course.description}
                         </p>
                       </div>

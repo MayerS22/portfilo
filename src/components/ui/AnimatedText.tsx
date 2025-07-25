@@ -56,7 +56,7 @@ const AnimatedText = ({ text, className = '', delay = 0, duration = 0.05 }: Anim
       <motion.span
         animate={{ opacity: [1, 0, 1] }}
         transition={{ duration: 0.8, repeat: Infinity }}
-        className="inline-block w-0.5 h-6 bg-primary-600 dark:bg-primary-400 ml-1"
+        className="inline-block w-0.5 h-6 bg-blue-400 ml-1"
       />
     </motion.span>
   )

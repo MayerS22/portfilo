@@ -95,7 +95,7 @@ const Skills = () => {
   }
 
   return (
-    <section id="skills" className="section-padding bg-gray-50 dark:bg-dark-800">
+    <section id="skills" className="section-padding bg-gray-800">
       <div className="container-custom">
         <motion.div
           variants={containerVariants}
@@ -112,7 +112,7 @@ const Skills = () => {
           </motion.h2>
           <motion.p 
             variants={itemVariants}
-            className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+            className="text-xl text-gray-400 max-w-2xl mx-auto"
           >
             Passionate about software engineering, mobile and web development, and data engineering.
           </motion.p>
@@ -132,8 +132,8 @@ const Skills = () => {
               className="card p-6"
             >
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/20 rounded-lg flex items-center justify-center mr-4">
-                  <category.icon className="text-primary-600 dark:text-primary-400" size={24} />
+                <div className="w-12 h-12 bg-blue-900/20 rounded-lg flex items-center justify-center mr-4">
+                  <category.icon className="text-blue-400" size={24} />
                 </div>
                 <h3 className="text-xl font-semibold">{category.name}</h3>
               </div>
@@ -142,20 +142,20 @@ const Skills = () => {
                 {category.skills.map((skill) => (
                   <div key={skill.name}>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                      <span className="text-sm font-medium text-gray-300">
                         {skill.name}
                       </span>
-                      <span className="text-sm text-primary-600 dark:text-primary-400 font-medium">
+                      <span className="text-sm text-blue-400 font-medium">
                         {skill.level}%
                       </span>
                     </div>
-                    <div className="w-full bg-gray-200 dark:bg-dark-700 rounded-full h-2">
+                    <div className="w-full bg-gray-700 rounded-full h-2">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         viewport={{ once: true }}
                         transition={{ duration: 1, delay: 0.2 }}
-                        className="bg-gradient-to-r from-primary-500 to-purple-500 h-2 rounded-full"
+                        className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full"
                       />
                     </div>
                   </div>
@@ -178,20 +178,20 @@ const Skills = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div className="space-y-3">
                 <div className="flex items-start">
-                  <span className="text-primary-600 dark:text-primary-400 mr-3 mt-1">⚡</span>
-                  <p className="text-gray-600 dark:text-gray-400">Develop secure and user-friendly mobile and web applications</p>
+                  <span className="text-blue-400 mr-3 mt-1">⚡</span>
+                  <p className="text-gray-400">Develop secure and user-friendly mobile and web applications</p>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-primary-600 dark:text-primary-400 mr-3 mt-1">⚡</span>
-                  <p className="text-gray-600 dark:text-gray-400">Experience with Android (Kotlin), Flutter, React, Node.js, and C++</p>
+                  <span className="text-blue-400 mr-3 mt-1">⚡</span>
+                  <p className="text-gray-400">Experience with Android (Kotlin), Flutter, React, Node.js, and C++</p>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-primary-600 dark:text-primary-400 mr-3 mt-1">⚡</span>
-                  <p className="text-gray-600 dark:text-gray-400">Data engineering, BI, and reporting using Power BI</p>
+                  <span className="text-blue-400 mr-3 mt-1">⚡</span>
+                  <p className="text-gray-400">Data engineering, BI, and reporting using Power BI</p>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-primary-600 dark:text-primary-400 mr-3 mt-1">⚡</span>
-                  <p className="text-gray-600 dark:text-gray-400">Database design and modeling</p>
+                  <span className="text-blue-400 mr-3 mt-1">⚡</span>
+                  <p className="text-gray-400">Database design and modeling</p>
                 </div>
               </div>
             </div>
@@ -209,7 +209,7 @@ const Skills = () => {
               ].map((skill) => (
                 <div
                   key={skill}
-                  className="bg-gray-100 dark:bg-dark-700 rounded-lg px-4 py-2 text-center text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors duration-200"
+                  className="bg-gray-700 rounded-lg px-4 py-2 text-center text-sm font-medium text-gray-300 hover:bg-blue-900/20 transition-colors duration-200"
                 >
                   {skill}
                 </div>

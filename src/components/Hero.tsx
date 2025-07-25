@@ -30,7 +30,7 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center section-padding pt-16 sm:pt-20 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-10 sm:top-20 left-4 sm:left-10 w-48 h-48 sm:w-72 sm:h-72 bg-primary-600/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-10 sm:top-20 left-4 sm:left-10 w-48 h-48 sm:w-72 sm:h-72 bg-blue-600/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-10 sm:bottom-20 right-4 sm:right-10 w-64 h-64 sm:w-96 sm:h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse delay-1000" />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 sm:w-64 sm:h-64 bg-blue-600/10 rounded-full blur-3xl animate-pulse delay-500" />
       </div>
@@ -45,7 +45,7 @@ const Hero = () => {
           {/* Greeting with Sparkles */}
           <motion.div
             variants={itemVariants}
-            className="flex items-center justify-center gap-2 text-base sm:text-lg text-primary-600 dark:text-primary-400 font-medium mb-4"
+            className="flex items-center justify-center gap-2 text-base sm:text-lg text-blue-400 font-medium mb-4"
           >
             <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
             <AnimatedText text="Hello, I'm" delay={0.5} />
@@ -65,7 +65,7 @@ const Hero = () => {
           {/* Title with Typewriter Effect */}
           <motion.h2
             variants={itemVariants}
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-6 sm:mb-8"
           >
             <AnimatedText text="Full-Stack Developer & Software Engineer" delay={2} duration={0.05} />
           </motion.h2>
@@ -73,7 +73,7 @@ const Hero = () => {
           {/* Description */}
           <motion.p
             variants={itemVariants}
-            className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0"
+            className="text-sm sm:text-base md:text-lg text-gray-400 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0"
           >
             I am a passionate full stack developer who thrives on continuous learning and creative problem-solving. 
             I believe that personal growth comes from embracing new challenges and exploring innovative solutions.
@@ -95,7 +95,7 @@ const Hero = () => {
             >
               <span className="relative z-10">Get In Touch</span>
               <ArrowRight size={18} className="relative z-10 group-hover:translate-x-1 transition-transform" />
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </motion.a>
             <motion.a
               href="/resume.pdf"
@@ -134,7 +134,7 @@ const Hero = () => {
                   transition: { duration: 0.3 }
                 }}
                 whileTap={{ scale: 0.9 }}
-                className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 p-2 sm:p-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+                className="text-gray-400 hover:text-blue-400 transition-colors duration-200 p-2 sm:p-3 rounded-full hover:bg-gray-800"
               >
                 <social.icon size={20} className="sm:w-6 sm:h-6" />
               </motion.a>
@@ -160,14 +160,14 @@ const Hero = () => {
                 transition={{ delay: 3 + index * 0.1 }}
               >
                 <motion.div 
-                  className="text-2xl sm:text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2"
+                  className="text-2xl sm:text-3xl font-bold text-blue-400 mb-2"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 3.5 + index * 0.1, type: "spring", stiffness: 200 }}
                 >
                   {stat.number}
                 </motion.div>
-                <div className="text-sm sm:text-base text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                <div className="text-sm sm:text-base text-gray-400 group-hover:text-blue-400 transition-colors">
                   {stat.label}
                 </div>
               </motion.div>

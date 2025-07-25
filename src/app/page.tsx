@@ -7,19 +7,22 @@ import Experience from '@/components/Experience'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import AnimatedBackground from '@/components/ui/AnimatedBackground'
+import ThemeProvider from '@/components/ThemeProvider'
 
 export default function Home() {
   return (
-    <main className="min-h-screen relative">
-      <AnimatedBackground />
-      <Header />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Experience />
-      <Contact />
-      <Footer />
-    </main>
+    <ThemeProvider>
+      <main className="min-h-screen relative">
+        <AnimatedBackground />
+        <Header />
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Contact />
+        <Footer />
+      </main>
+    </ThemeProvider>
   )
 } 

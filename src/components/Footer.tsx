@@ -11,19 +11,19 @@ const Footer = () => {
       name: 'GitHub',
       icon: Github,
       url: 'https://github.com/MayerS22',
-      color: 'hover:text-gray-900 dark:hover:text-white'
+      color: 'hover:text-white'
     },
     {
       name: 'LinkedIn',
       icon: Linkedin,
       url: 'https://www.linkedin.com/in/mayer-frieg-7a0368226/',
-      color: 'hover:text-blue-600 dark:hover:text-blue-400'
+      color: 'hover:text-blue-400'
     },
     {
       name: 'Email',
       icon: Mail,
       url: 'mailto:mayerfrieg@outlook.com',
-      color: 'hover:text-red-600 dark:hover:text-red-400'
+      color: 'hover:text-red-400'
     }
   ]
 
@@ -37,7 +37,7 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-gray-900 dark:bg-dark-900 text-white">
+    <footer className="bg-gray-900 text-white">
       <div className="container-custom py-12">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Brand Section */}
@@ -65,7 +65,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1, y: -2 }}
-                    className={`w-10 h-10 bg-gray-800 dark:bg-dark-700 rounded-lg flex items-center justify-center text-gray-400 transition-colors duration-200 ${social.color}`}
+                    className={`w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center text-gray-400 transition-colors duration-200 ${social.color}`}
                   >
                     <social.icon size={20} />
                   </motion.a>
@@ -118,7 +118,7 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="border-t border-gray-800 dark:border-dark-700 mt-12 pt-8"
+          className="border-t border-gray-700 mt-12 pt-8"
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
