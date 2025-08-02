@@ -20,11 +20,6 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  // Disable static optimization for development
-  staticPageGenerationTimeout: 0,
-  // Disable build cache
-  generateBuildId: () => 'build',
-  // Add your custom domain
   async headers() {
     return [
       {
