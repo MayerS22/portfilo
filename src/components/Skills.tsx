@@ -105,73 +105,7 @@ const Skills = () => {
       </div>
 
       <div className="container-custom relative z-10">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <motion.h2
-            variants={itemVariants}
-            className="text-4xl font-bold mb-4"
-          >
-            Technical Skills
-          </motion.h2>
-          <motion.p
-            variants={itemVariants}
-            className="text-xl text-gray-400 max-w-2xl mx-auto"
-          >
-            Passionate about software engineering, mobile and web development, and data engineering.
-          </motion.p>
-        </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8"
-        >
-          {skillCategories.map((category) => (
-            <motion.div
-              key={category.name}
-              variants={itemVariants}
-              className="card p-6"
-            >
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-blue-900/20 rounded-lg flex items-center justify-center mr-4">
-                  <category.icon className="text-blue-400" size={24} />
-                </div>
-                <h3 className="text-xl font-semibold">{category.name}</h3>
-              </div>
-
-              <div className="space-y-4">
-                {category.skills.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium text-gray-300">
-                        {skill.name}
-                      </span>
-                      <span className="text-sm text-blue-400 font-medium">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="w-full bg-gray-700 rounded-full h-2">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.2 }}
-                        className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
 
         {/* Additional Skills */}
         <motion.div
@@ -212,7 +146,7 @@ const Skills = () => {
               </div>
             </div>
 
-            <h4 className="text-2xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Additional Skills & Technologies</h4>
+            <h4 className="text-2xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Skills & Technologies</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <motion.div
                 variants={itemVariants}
