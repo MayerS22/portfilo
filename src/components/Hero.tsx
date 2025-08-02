@@ -58,7 +58,7 @@ const Hero = () => {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6"
           >
             <span className="gradient-text">
-              <AnimatedText text="Mayer Soliman" delay={1} duration={0.03} />
+              <AnimatedText text="Mayer Frieg" delay={1} duration={0.03} />
             </span>
           </motion.h1>
 
