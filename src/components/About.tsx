@@ -26,10 +26,9 @@ const About = () => {
   }
 
   const skills = [
-    { name: 'Mobile Development', icon: Smartphone, description: 'Kotlin, Flutter, Android, Jetpack Compose' },
-    { name: 'Web Development', icon: Globe, description: 'React, Node.js, HTML5, CSS3, JavaScript' },
-    { name: 'Programming', icon: Code, description: 'Python, C++, TypeScript, Problem Solving' },
-    { name: 'Data Engineering', icon: Database, description: 'Power BI, SQL, Database Design, Reporting' },
+    { name: 'Frontend Development', icon: Globe, description: 'React, HTML5, CSS3, JavaScript, TypeScript' },
+    { name: 'Backend Development', icon: Code, description: 'Node.js, Express.js, Python, Database Design' },
+    { name: 'Full Stack Tools', icon: Zap, description: 'Git, Testing, Problem Solving, System Design' },
   ]
 
   return (
@@ -45,9 +44,13 @@ const About = () => {
           {/* Left Column - Image & Personal Info */}
           <motion.div variants={itemVariants} className="space-y-8">
             <div className="relative">
-              <div className="w-80 h-80 mx-auto lg:mx-0 rounded-full bg-gradient-to-br from-blue-400 to-purple-600 p-1">
-                <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center">
-                  <span className="text-6xl">👨‍💻</span>
+              <div className="w-96 h-96 mx-auto lg:mx-0 rounded-full bg-gradient-to-br from-blue-400 to-purple-600 p-1">
+                <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center overflow-hidden">
+                  <img 
+                    src="/images/Mayer Soliman.png" 
+                    alt="Mayer Soliman Hedya" 
+                    className="w-full h-full object-cover rounded-full"
+                  />
                 </div>
               </div>
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center">
@@ -58,8 +61,9 @@ const About = () => {
             <div className="text-center lg:text-left">
               <h3 className="text-2xl font-bold mb-4">About Me</h3>
               <p className="text-gray-400 leading-relaxed">
-                I am a passionate full stack developer who thrives on continuous learning and creative problem-solving. 
-                I believe that personal growth comes from embracing new challenges and exploring innovative solutions.
+                I am a passionate Full Stack Developer who thrives on continuous learning and creative problem-solving. 
+                I specialize in building complete web applications from frontend to backend, ensuring seamless user experiences 
+                and robust server-side solutions.
               </p>
             </div>
           </motion.div>
@@ -69,8 +73,8 @@ const About = () => {
             <div>
               <h2 className="text-3xl font-bold mb-6">What I Do</h2>
               <p className="text-gray-400 mb-8 leading-relaxed">
-                Passionate about software engineering, mobile and web development, and data engineering. 
-                I specialize in creating secure and user-friendly applications that solve real-world problems.
+                I specialize in building modern, scalable full stack web applications. From responsive frontend interfaces 
+                to robust backend systems, I create complete solutions that deliver exceptional user experiences and powerful functionality.
               </p>
             </div>
 
@@ -93,14 +97,6 @@ const About = () => {
                   </p>
                 </motion.div>
               ))}
-            </div>
-
-            <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-xl p-6">
-              <h3 className="font-semibold text-lg mb-3">Current Focus</h3>
-              <p className="text-gray-400 text-sm">
-                Currently working on mobile applications, web development, and data engineering projects. 
-                Always learning and exploring new technologies to stay at the forefront of software development.
-              </p>
             </div>
           </motion.div>
         </motion.div>
