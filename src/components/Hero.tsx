@@ -97,9 +97,16 @@ const Hero = () => {
               <ArrowRight size={18} className="relative z-10 group-hover:translate-x-1 transition-transform" />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </motion.a>
-            <motion.a
-              href="/resume.pdf"
-              target="_blank"
+            <motion.button
+              onClick={() => {
+                // Create a link element
+                const link = document.createElement('a');
+                link.href = '/documents/Mayer Soliman.pdf'; // Update this path to your CV file
+                link.download = 'Mayer Soliman.pdf'; // Update filename as needed
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
@@ -109,7 +116,7 @@ const Hero = () => {
             >
               <Download size={18} className="relative z-10 group-hover:animate-bounce" />
               <span className="relative z-10">Download Resume</span>
-            </motion.a>
+            </motion.button>
           </motion.div>
 
           {/* Social Links with Enhanced Animations */}
