@@ -1,27 +1,28 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import ErrorBoundary from '@/components/ui/ErrorBoundary'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Full-Stack Developer Portfolio',
-  description: 'Professional portfolio showcasing full-stack development skills, projects, and software engineering expertise.',
-  keywords: ['full-stack developer', 'software engineer', 'web development', 'React', 'Node.js', 'TypeScript'],
-  authors: [{ name: 'Your Name' }],
-  creator: 'Your Name',
+  title: 'Mayer Soliman Hedya - Full-Stack Developer Portfolio',
+  description: 'Professional Full-Stack Developer specializing in React, Node.js, and modern web technologies. View my projects and get in touch for collaboration opportunities.',
+  keywords: ['Mayer Soliman', 'Full-Stack Developer', 'React Developer', 'Node.js Developer', 'Web Development', 'Software Engineer', 'Egypt'],
+  authors: [{ name: 'Mayer Soliman Hedya' }],
+  creator: 'Mayer Soliman Hedya',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://your-portfolio.com',
-    title: 'Full-Stack Developer Portfolio',
-    description: 'Professional portfolio showcasing full-stack development skills and projects.',
-    siteName: 'Developer Portfolio',
+    url: 'https://mayer-portfolio.com',
+    title: 'Mayer Soliman Hedya - Full-Stack Developer',
+    description: 'Professional Full-Stack Developer specializing in React, Node.js, and modern web technologies.',
+    siteName: 'Mayer Soliman Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Full-Stack Developer Portfolio',
-    description: 'Professional portfolio showcasing full-stack development skills and projects.',
+    title: 'Mayer Soliman Hedya - Full-Stack Developer',
+    description: 'Professional Full-Stack Developer specializing in React, Node.js, and modern web technologies.',
   },
   robots: {
     index: true,
@@ -37,7 +38,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} antialiased`} suppressHydrationWarning>
-        {children}
+        <ErrorBoundary>
+          {children}
+        </ErrorBoundary>
       </body>
     </html>
   )

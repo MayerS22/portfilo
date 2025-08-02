@@ -32,7 +32,7 @@ const Header = () => {
           {/* Logo */}
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="text-xl sm:text-2xl font-bold gradient-text"
+            className="text-lg sm:text-xl lg:text-2xl font-bold gradient-text"
           >
             Mayer.dev
           </motion.div>

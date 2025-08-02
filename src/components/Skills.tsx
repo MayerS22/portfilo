@@ -115,9 +115,9 @@ const Skills = () => {
           viewport={{ once: true }}
           className="mt-16"
         >
-          <div className="card p-8">
+          <div className="card p-6 sm:p-8">
             <h3 className="text-2xl font-bold mb-6 text-center">What I Do</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 px-4 sm:px-0">
               <div className="space-y-3">
                 <div className="flex items-start">
                   <span className="text-blue-400 mr-3 mt-1">⚡</span>
@@ -147,7 +147,7 @@ const Skills = () => {
             </div>
 
             <h4 className="text-2xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Skills & Technologies</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-0">
               <motion.div
                 variants={itemVariants}
                 className="bg-gray-900/20 backdrop-blur-sm border border-gray-700/30 p-6 group hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden rounded-2xl"

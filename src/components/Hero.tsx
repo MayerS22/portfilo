@@ -58,7 +58,7 @@ const Hero = () => {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6"
           >
             <span className="gradient-text">
-              <AnimatedText text="Mayer Soliman Hedya" delay={1} duration={0.03} />
+              <AnimatedText text="Mayer Soliman" delay={1} duration={0.03} />
             </span>
           </motion.h1>
 
@@ -73,7 +73,7 @@ const Hero = () => {
           {/* Description */}
           <motion.p
             variants={itemVariants}
-            className="text-sm sm:text-base md:text-lg text-gray-400 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0"
+            className="text-sm sm:text-base md:text-lg text-gray-400 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed px-6 sm:px-0"
           >
             I am a passionate full stack developer who thrives on continuous learning and creative problem-solving. 
             I believe that personal growth comes from embracing new challenges and exploring innovative solutions.
@@ -82,7 +82,7 @@ const Hero = () => {
           {/* CTA Buttons with Enhanced Hover Effects */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4 sm:px-0"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-6 sm:px-0"
           >
             <motion.a
               href="#contact"

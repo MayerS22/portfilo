@@ -77,13 +77,13 @@ const Contact = () => {
           </motion.h2>
           <motion.p 
             variants={itemVariants}
-            className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto px-4 sm:px-0"
+            className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto px-6 sm:px-0"
           >
             I'm always interested in new opportunities and exciting projects. Let's work together!
           </motion.p>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto px-4 sm:px-0">
           <motion.div
             variants={containerVariants}
             initial="hidden"

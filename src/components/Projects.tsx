@@ -124,7 +124,7 @@ const Projects = () => {
           </motion.h2>
           <motion.p 
             variants={itemVariants}
-            className="text-xl text-gray-400 max-w-2xl mx-auto"
+            className="text-xl text-gray-400 max-w-2xl mx-auto px-6 sm:px-0"
           >
             A showcase of my recent work and technical expertise
           </motion.p>
@@ -135,7 +135,7 @@ const Projects = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-0"
         >
           {projects.map((project, index) => {
             const CategoryIcon = getCategoryIcon(project.categories[0])

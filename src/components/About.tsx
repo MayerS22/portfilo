@@ -39,12 +39,12 @@ const About = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid lg:grid-cols-2 gap-12 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
         >
           {/* Left Column - Image & Personal Info */}
           <motion.div variants={itemVariants} className="space-y-8">
             <div className="relative">
-              <div className="w-96 h-96 mx-auto lg:mx-0 rounded-full bg-gradient-to-br from-blue-400 to-purple-600 p-1">
+              <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 mx-auto lg:mx-0 rounded-full bg-gradient-to-br from-blue-400 to-purple-600 p-1">
                 <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center overflow-hidden">
                   <img 
                     src="/images/Mayer Soliman.png" 
@@ -58,7 +58,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="text-center lg:text-left">
+            <div className="text-center lg:text-left px-4 sm:px-0">
               <h3 className="text-2xl font-bold mb-4">About Me</h3>
               <p className="text-gray-400 leading-relaxed">
                 I am a passionate Full Stack Developer who thrives on continuous learning and creative problem-solving. 
@@ -70,7 +70,7 @@ const About = () => {
 
           {/* Right Column - Skills & Experience */}
           <motion.div variants={itemVariants} className="space-y-8">
-            <div>
+            <div className="px-4 sm:px-0">
               <h2 className="text-3xl font-bold mb-6">What I Do</h2>
               <p className="text-gray-400 mb-8 leading-relaxed">
                 I specialize in building modern, scalable full stack web applications. From responsive frontend interfaces 
@@ -78,7 +78,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {skills.map((skill, index) => (
                 <motion.div
                   key={skill.name}

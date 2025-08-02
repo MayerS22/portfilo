@@ -11,41 +11,41 @@ const Experience = () => {
       company: 'QueenSoft',
       location: 'Egypt',
       period: 'Jan. 2025 – Present',
-      description: 'Full Stack Developer working on modern web applications and mobile solutions.',
-      technologies: ['Next.js', 'Nest.js', 'PostgreSQL', 'TypeScript'],
+      description: 'Full Stack Developer building scalable web applications with modern technologies.',
+      technologies: ['Next.js', 'Nest.js', 'PostgreSQL', 'TypeScript', 'React', 'Node.js', 'REST APIs'],
       type: 'work',
       image: '/images/QueenSoft.jpg',
       imageAlt: 'QueenSoft Logo'
     },
     {
-      title: 'Assistant',
+      title: 'Administrative Assistant',
       company: 'Christian Medical Foundation (CMF)',
       location: 'Egypt',
       period: 'Aug. 2023 – Present',
-      description: 'Assistant for the manager of the foundation. Making reports, organizing meetings, and events.',
-      technologies: ['Microsoft Office', 'Data Entry', 'Report Generation', 'Event Management'],
+      description: 'Supporting foundation operations through data management and event coordination.',
+      technologies: ['Microsoft Office', 'Data Entry', 'Report Generation', 'Event Management', 'Process Optimization'],
       type: 'work',
       image: '/images/CMF.jpg',
       imageAlt: 'CMF Logo'
     },
     {
-      title: 'HR Team Leader (Volunteer)',
-      company: 'Microsoft Tech Club at Ain Shams University (MSP)',
+      title: 'Microsoft Student Partner (MSP)',
+      company: 'Microsoft Tech Club at Ain Shams University',
       location: 'Egypt',
       period: 'Oct 2022 – Oct 2023',
-      description: 'Volunteering job leading HR activities and team management.',
-      technologies: ['Leadership', 'Team Management', 'Event Planning', 'Microsoft Technologies'],
+      description: 'Led technical workshops and mentored students in Microsoft technologies. Organized hackathons and managed team of 15+ members.',
+      technologies: ['Microsoft Azure', 'Power Platform', 'Power BI', 'GitHub', 'Leadership', 'Event Management', 'Student Mentoring', 'Technical Workshops'],
       type: 'work',
       image: '/images/MSP.jpg',
       imageAlt: 'MSP Logo'
     },
     {
-      title: 'Data Entry',
+      title: 'Database Administrator',
       company: 'Christian Medical Foundation (CMF)',
       location: 'Egypt',
       period: 'Sept 2022 – Feb 2023',
-      description: 'Creating a database for the committee using Microsoft Access.',
-      technologies: ['Microsoft Access', 'Database Design', 'Data Entry', 'SQL'],
+      description: 'Designed and implemented database system for committee management using Microsoft Access.',
+      technologies: ['Microsoft Access', 'Database Design', 'SQL', 'Data Modeling', 'Process Automation'],
       type: 'work',
       image: '/images/CMF.jpg',
       imageAlt: 'CMF Logo'
@@ -54,11 +54,11 @@ const Experience = () => {
 
   const education = [
     {
-      title: 'Bachelors of Computer and Information Science',
+      title: 'Bachelor of Computer and Information Science',
       institution: 'Ain Shams University',
       location: 'Egypt',
       period: 'Sept 2021 - July 2025',
-      description: 'GPA: 3.005 - Currently pursuing degree in Computer and Information Science.',
+      description: 'GPA: 3.005 - Software engineering, database systems, and modern development practices.',
       type: 'education',
       image: '/images/CS.jpg',
       imageAlt: 'Ain Shams University Logo'
@@ -66,19 +66,12 @@ const Experience = () => {
   ]
 
   const certifications = [
-    {
-      title: 'Freelancer\'s Success Toolkit',
-      issuer: 'E-Youth | ITIDA',
-      date: 'Mar. 2025',
-      description: 'Training program for freelancing success and business development.',
-      image: '/images/ITIDA.jpg',
-      imageAlt: 'E-Youth Logo'
-    },
+   
     {
       title: 'Android Internship',
       issuer: 'Banque Misr',
       date: 'Aug. 2024 – Sept. 2024',
-      description: 'Professional internship in Android development and mobile banking applications.',
+      description: 'Professional internship in Android development.',
       image: '/images/BM.jpg',
       imageAlt: 'Banque Misr Logo'
     },
@@ -87,7 +80,7 @@ const Experience = () => {
       title: 'Data Engineering Training',
       issuer: 'Potenia Ain Shams University',
       date: 'Aug. 2023 – Sept. 2023',
-      description: 'Comprehensive training in data engineering concepts and practices.',
+      description: 'Training in data engineering concepts.',
       image: '/images/POTENTIA.jpg',
       imageAlt: 'Potenia Logo'
     },
@@ -95,7 +88,7 @@ const Experience = () => {
       title: 'Flutter Training',
       issuer: 'Support Ain Shams University',
       date: 'Aug. 2023 – Sept. 2023',
-      description: 'Mobile app development training using Flutter framework.',
+      description: 'Mobile app development with Flutter.',
       image: '/images/Support.jpg',
       imageAlt: 'Support Logo'
     },
@@ -103,13 +96,14 @@ const Experience = () => {
       title: 'Software Engineering Training',
       issuer: 'ALX',
       date: 'Feb. 2023 – Apr. 2023',
-      description: 'Intensive software engineering program covering modern development practices.',
+      description: 'Intensive software engineering program.',
       image: '/images/ALX.jpg',
       imageAlt: 'ALX Logo'
     }
   ]
 
   const courses = [
+
     {
       title: 'Nest.js: The Complete Developer\'s Guide',
       issuer: 'Udemy',
@@ -117,6 +111,14 @@ const Experience = () => {
       description: 'Learn how to build a web application from scratch using Nest.js, a powerful Node.js framework.',
       image: '/images/Udemy.jpg',
       imageAlt: 'Udemy Logo'
+    },
+    {
+      title: 'Freelancer\'s Success Toolkit',
+      issuer: 'E-Youth | ITIDA',
+      date: 'Mar. 2025',
+      description: 'Training program for freelancing success.',
+      image: '/images/ITIDA.jpg',
+      imageAlt: 'E-Youth Logo'
     },
     {
       title: 'Flutter Course',
@@ -175,13 +177,13 @@ const Experience = () => {
           </motion.h2>
           <motion.p 
             variants={itemVariants}
-            className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto"
+            className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto px-6 sm:px-0"
           >
             My professional journey and academic background
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 px-4 sm:px-0">
           {/* Left Column - Education & Work Experience */}
           <motion.div
             variants={containerVariants}
@@ -201,11 +203,11 @@ const Experience = () => {
                   <motion.div
                     key={index}
                     variants={itemVariants}
-                    className="card p-6 group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                    className="card p-4 sm:p-6 group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                   >
-                    <div className="flex items-start gap-4 sm:gap-6">
+                    <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
                       {/* Institution Logo */}
-                      <div className="flex-shrink-0">
+                      <div className="flex-shrink-0 mx-auto sm:mx-0 mb-4 sm:mb-0">
                         <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl shadow-lg border border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-2xl group-hover:scale-105 transition-all duration-300">
                           {/* Gradient overlay */}
                           <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-600/30 rounded-2xl"></div>
@@ -230,23 +232,23 @@ const Experience = () => {
                       </div>
 
                       {/* Content */}
-                      <div className="flex-1 min-w-0">
-                        <h4 className="text-lg sm:text-xl font-semibold mb-2 text-white group-hover:text-blue-400 transition-colors duration-300">
+                      <div className="flex-1 min-w-0 text-center sm:text-left">
+                        <h4 className="text-base sm:text-lg lg:text-xl font-semibold mb-2 text-white group-hover:text-blue-400 transition-colors duration-300 break-words">
                           {edu.title}
                         </h4>
-                        <div className="flex items-center text-gray-400 text-sm mb-1">
+                        <div className="flex items-center justify-center sm:justify-start text-gray-400 text-xs sm:text-sm mb-1">
                           <Building size={14} className="mr-2 flex-shrink-0" />
-                          <span className="truncate font-medium">{edu.institution}</span>
+                          <span className="break-words font-medium">{edu.institution}</span>
                         </div>
-                        <div className="flex items-center text-gray-400 text-sm mb-1">
+                        <div className="flex items-center justify-center sm:justify-start text-gray-400 text-xs sm:text-sm mb-1">
                           <MapPin size={14} className="mr-2 flex-shrink-0" />
-                          <span className="truncate">{edu.location}</span>
+                          <span className="break-words">{edu.location}</span>
                         </div>
-                        <div className="flex items-center text-gray-400 text-sm mb-3">
+                        <div className="flex items-center justify-center sm:justify-start text-gray-400 text-xs sm:text-sm mb-3">
                           <Calendar size={14} className="mr-2 flex-shrink-0" />
-                          <span className="truncate">{edu.period}</span>
+                          <span className="break-words">{edu.period}</span>
                         </div>
-                        <p className="text-sm text-gray-400 leading-relaxed">
+                        <p className="text-xs sm:text-sm text-gray-400 leading-relaxed break-words">
                           {edu.description}
                         </p>
                       </div>
@@ -268,11 +270,11 @@ const Experience = () => {
                   <motion.div
                     key={index}
                     variants={itemVariants}
-                    className="card p-6 relative group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                    className="card p-4 sm:p-6 relative group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                   >
-                    <div className="flex items-start gap-4 sm:gap-6">
+                    <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
                       {/* Company Logo */}
-                      <div className="flex-shrink-0">
+                      <div className="flex-shrink-0 mx-auto sm:mx-0 mb-4 sm:mb-0">
                         <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl shadow-lg border border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-2xl group-hover:scale-105 transition-all duration-300">
                           {/* Gradient overlay */}
                           <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-600/30 rounded-2xl"></div>
@@ -297,34 +299,34 @@ const Experience = () => {
                       </div>
 
                       {/* Content */}
-                      <div className="flex-1 min-w-0">
+                      <div className="flex-1 min-w-0 text-center sm:text-left">
                         <div className="mb-3">
-                          <h4 className="text-lg sm:text-xl font-semibold mb-2 text-white group-hover:text-blue-400 transition-colors duration-300">
+                          <h4 className="text-base sm:text-lg lg:text-xl font-semibold mb-2 text-white group-hover:text-blue-400 transition-colors duration-300 break-words">
                             {exp.title}
                           </h4>
-                          <div className="flex items-center text-gray-400 text-sm mb-1">
+                          <div className="flex items-center justify-center sm:justify-start text-gray-400 text-xs sm:text-sm mb-1">
                             <Building size={14} className="mr-2 flex-shrink-0" />
-                            <span className="truncate font-medium">{exp.company}</span>
+                            <span className="break-words font-medium">{exp.company}</span>
                           </div>
-                          <div className="flex items-center text-gray-400 text-sm mb-1">
+                          <div className="flex items-center justify-center sm:justify-start text-gray-400 text-xs sm:text-sm mb-1">
                             <MapPin size={14} className="mr-2 flex-shrink-0" />
-                            <span className="truncate">{exp.location}</span>
+                            <span className="break-words">{exp.location}</span>
                           </div>
-                          <div className="flex items-center text-gray-400 text-sm">
+                          <div className="flex items-center justify-center sm:justify-start text-gray-400 text-xs sm:text-sm">
                             <Calendar size={14} className="mr-2 flex-shrink-0" />
-                            <span className="truncate">{exp.period}</span>
+                            <span className="break-words">{exp.period}</span>
                           </div>
                         </div>
                         
-                        <p className="text-sm sm:text-base text-gray-400 mb-4 leading-relaxed">
+                        <p className="text-xs sm:text-sm lg:text-base text-gray-400 mb-4 leading-relaxed break-words">
                           {exp.description}
                         </p>
 
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-1 sm:gap-2 justify-center sm:justify-start">
                           {exp.technologies.map((tech) => (
                             <span
                               key={tech}
-                              className="px-3 py-1 bg-gradient-to-r from-blue-900/20 to-blue-800/20 text-blue-300 text-xs rounded-full font-medium border border-blue-700/50 hover:from-blue-800/30 hover:to-blue-700/30 transition-all duration-300"
+                              className="px-2 sm:px-3 py-1 bg-gradient-to-r from-blue-900/20 to-blue-800/20 text-blue-300 text-xs rounded-full font-medium border border-blue-700/50 hover:from-blue-800/30 hover:to-blue-700/30 transition-all duration-300"
                             >
                               {tech}
                             </span>
@@ -359,7 +361,7 @@ const Experience = () => {
                     variants={itemVariants}
                     className="card p-4 group hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
                   >
-                    <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-4">
                       {/* Certification Logo */}
                       <div className="flex-shrink-0">
                         <div className="relative w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl shadow-md border border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
@@ -386,12 +388,12 @@ const Experience = () => {
                       </div>
 
                       {/* Content */}
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-start justify-between mb-2">
+                      <div className="flex-1 min-w-0 text-center sm:text-left">
+                        <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between mb-2">
                           <h4 className="font-semibold text-sm sm:text-base text-white group-hover:text-blue-400 transition-colors duration-300">
                             {cert.title}
                           </h4>
-                          <span className="text-xs sm:text-sm text-gray-500 flex-shrink-0 ml-2">
+                          <span className="text-xs sm:text-sm text-gray-500 flex-shrink-0 mt-1 sm:mt-0 sm:ml-2">
                             {cert.date}
                           </span>
                         </div>
@@ -422,7 +424,7 @@ const Experience = () => {
                     variants={itemVariants}
                     className="card p-4 group hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
                   >
-                    <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-4">
                       {/* Course Logo */}
                       <div className="flex-shrink-0">
                         <div className="relative w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl shadow-md border border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
@@ -449,12 +451,12 @@ const Experience = () => {
                       </div>
 
                       {/* Content */}
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-start justify-between mb-2">
+                      <div className="flex-1 min-w-0 text-center sm:text-left">
+                        <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between mb-2">
                           <h4 className="font-semibold text-sm sm:text-base text-white group-hover:text-blue-400 transition-colors duration-300">
                             {course.title}
                           </h4>
-                          <span className="text-xs sm:text-sm text-gray-500 flex-shrink-0 ml-2">
+                          <span className="text-xs sm:text-sm text-gray-500 flex-shrink-0 mt-1 sm:mt-0 sm:ml-2">
                             {course.date}
                           </span>
                         </div>

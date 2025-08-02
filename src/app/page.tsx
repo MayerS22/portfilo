@@ -7,6 +7,7 @@ import Experience from '@/components/Experience'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import AnimatedBackground from '@/components/ui/AnimatedBackground'
+import ScrollToTop from '@/components/ui/ScrollToTop'
 import ThemeProvider from '@/components/ThemeProvider'
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         <Experience />
         <Contact />
         <Footer />
+        <ScrollToTop />
       </main>
     </ThemeProvider>
   )
