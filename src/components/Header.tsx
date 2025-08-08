@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Github, Linkedin, Mail, Download } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -27,27 +27,6 @@ const Header = () => {
     { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
     { name: 'Contact', href: '#contact' },
-  ]
-
-  const socialLinks = [
-    { 
-      name: 'GitHub', 
-      href: 'https://github.com/MayerS22', 
-      icon: Github,
-      color: 'hover:text-gray-300'
-    },
-    { 
-      name: 'LinkedIn', 
-      href: 'https://www.linkedin.com/in/mayer-frieg-7a0368226/', 
-      icon: Linkedin,
-      color: 'hover:text-blue-400'
-    },
-    { 
-      name: 'Email', 
-      href: 'mailto:mayerfrieg@outlook.com', 
-      icon: Mail,
-      color: 'hover:text-red-400'
-    }
   ]
 
   return (
@@ -84,45 +63,6 @@ const Header = () => {
               </motion.a>
             ))}
           </nav>
-
-          {/* Desktop Actions */}
-          <div className="hidden lg:flex items-center space-x-4 xl:space-x-6">
-            {/* Social Links */}
-            <div className="flex items-center space-x-3">
-              {socialLinks.map((social) => (
-                <motion.a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`text-gray-400 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-800/50 ${social.color}`}
-                  title={social.name}
-                >
-                  <social.icon size={18} />
-                </motion.a>
-              ))}
-            </div>
-
-            {/* Resume Download */}
-            <motion.button
-              onClick={() => {
-                const link = document.createElement('a');
-                link.href = '/documents/Mayer Soliman.pdf';
-                link.download = 'Mayer Soliman.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 shadow-lg hover:shadow-xl"
-            >
-              <Download size={16} />
-              <span className="hidden xl:inline">Resume</span>
-            </motion.button>
-          </div>
 
           {/* Mobile Menu Button */}
           <motion.button
@@ -161,46 +101,6 @@ const Header = () => {
                     </motion.a>
                   ))}
                 </nav>
-
-                {/* Mobile Actions */}
-                <div className="space-y-4 pt-4 border-t border-gray-700/50">
-                  {/* Social Links */}
-                  <div className="flex justify-center space-x-6">
-                    {socialLinks.map((social) => (
-                      <motion.a
-                        key={social.name}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1, y: -2 }}
-                        whileTap={{ scale: 0.95 }}
-                        className={`w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 transition-colors duration-200 ${social.color}`}
-                        title={social.name}
-                      >
-                        <social.icon size={20} />
-                      </motion.a>
-                    ))}
-                  </div>
-
-                  {/* Resume Download */}
-                  <motion.button
-                    onClick={() => {
-                      const link = document.createElement('a');
-                      link.href = '/documents/Mayer Soliman.pdf';
-                      link.download = 'Mayer Soliman.pdf';
-                      document.body.appendChild(link);
-                      link.click();
-                      document.body.removeChild(link);
-                      setIsMenuOpen(false);
-                    }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-lg"
-                  >
-                    <Download size={18} />
-                    Download Resume
-                  </motion.button>
-                </div>
               </div>
             </motion.div>
           )}
