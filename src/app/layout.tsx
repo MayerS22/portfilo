@@ -6,6 +6,7 @@ import ErrorBoundary from '@/components/ui/ErrorBoundary'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mayersoliman.dev'),
   title: 'Mayer Soliman - Full-Stack Developer Portfolio',
   description: 'Professional Full-Stack Developer specializing in React, Node.js, and modern web technologies. View my projects and get in touch for collaboration opportunities.',
   keywords: ['Mayer Soliman', 'Full-Stack Developer', 'React Developer', 'Node.js Developer', 'Web Development', 'Software Engineer', 'Egypt'],
