@@ -10,27 +10,24 @@ const Contact = () => {
       title: 'Email',
       value: 'mayerfrieg@outlook.com',
       link: 'mailto:mayerfrieg@outlook.com',
-      color: 'from-red-500 to-pink-500',
-      bgColor: 'from-red-900/20 to-pink-900/20',
-      description: 'Send me an email'
+      color: 'text-red-400',
+      bgColor: 'from-red-900/20 to-pink-900/20'
     },
     {
       icon: Phone,
       title: 'Phone',
       value: '+201288244283',
       link: 'tel:+201288244283',
-      color: 'from-green-500 to-emerald-500',
-      bgColor: 'from-green-900/20 to-emerald-900/20',
-      description: 'Call me directly'
+      color: 'text-green-400',
+      bgColor: 'from-green-900/20 to-emerald-900/20'
     },
     {
       icon: MapPin,
       title: 'Location',
       value: 'Egypt',
       link: '#',
-      color: 'from-blue-500 to-cyan-500',
-      bgColor: 'from-blue-900/20 to-cyan-900/20',
-      description: 'Based in Egypt'
+      color: 'text-blue-400',
+      bgColor: 'from-blue-900/20 to-cyan-900/20'
     }
   ]
 
@@ -39,7 +36,7 @@ const Contact = () => {
       name: 'GitHub',
       icon: Github,
       url: 'https://github.com/MayerS22',
-      color: 'from-gray-500 to-gray-600',
+      color: 'text-gray-400',
       bgColor: 'from-gray-900/20 to-gray-800/20',
       hoverColor: 'hover:text-gray-300',
       description: 'View my projects'
@@ -48,9 +45,9 @@ const Contact = () => {
       name: 'LinkedIn',
       icon: Linkedin,
       url: 'https://www.linkedin.com/in/mayer-frieg-7a0368226/',
-      color: 'from-blue-500 to-blue-600',
+      color: 'text-blue-400',
       bgColor: 'from-blue-900/20 to-blue-800/20',
-      hoverColor: 'hover:text-blue-400',
+      hoverColor: 'hover:text-blue-300',
       description: 'Connect professionally'
     }
   ]
@@ -68,7 +65,7 @@ const Contact = () => {
         link.click();
         document.body.removeChild(link);
       },
-      color: 'from-purple-500 to-pink-500',
+      color: 'text-purple-400',
       bgColor: 'from-purple-600/20 to-pink-600/20',
       borderColor: 'border-purple-700/50 hover:border-purple-600/50'
     },
@@ -77,7 +74,7 @@ const Contact = () => {
       title: 'Send Email',
       description: 'Start a conversation',
       action: () => window.open('mailto:mayerfrieg@outlook.com'),
-      color: 'from-blue-500 to-cyan-500',
+      color: 'text-blue-400',
       bgColor: 'from-blue-600/20 to-cyan-600/20',
       borderColor: 'border-blue-700/50 hover:border-blue-600/50'
     }
@@ -188,7 +185,7 @@ const Contact = () => {
                       
                       <div className="relative z-10 flex items-center">
                         <div className={`w-12 h-12 bg-gradient-to-br ${info.bgColor} rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300`}>
-                          <info.icon className={`bg-gradient-to-r ${info.color} bg-clip-text text-transparent`} size={24} />
+                          <info.icon className={`${info.color} group-hover:text-white transition-colors duration-300`} size={24} />
                         </div>
                         <div className="flex-1">
                           <p className="font-semibold text-white text-base group-hover:text-gray-200 transition-colors duration-300">
@@ -196,9 +193,6 @@ const Contact = () => {
                           </p>
                           <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">
                             {info.value}
-                          </p>
-                          <p className="text-gray-500 text-xs group-hover:text-gray-400 transition-colors duration-300">
-                            {info.description}
                           </p>
                         </div>
                       </div>
@@ -229,7 +223,7 @@ const Contact = () => {
                       
                       <div className="relative z-10 flex items-center">
                         <div className={`w-12 h-12 bg-gradient-to-br ${social.bgColor} rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300`}>
-                          <social.icon className={`bg-gradient-to-r ${social.color} bg-clip-text text-transparent`} size={24} />
+                          <social.icon className={`${social.color} group-hover:text-white transition-colors duration-300`} size={24} />
                         </div>
                         <div className="flex-1">
                           <p className="font-semibold text-white text-base group-hover:text-gray-200 transition-colors duration-300">
@@ -265,7 +259,7 @@ const Contact = () => {
                     >
                       <div className="flex items-center">
                         <div className={`w-12 h-12 bg-gradient-to-br ${action.bgColor.replace('/20', '/30')} rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300`}>
-                          <action.icon className={`bg-gradient-to-r ${action.color} bg-clip-text text-transparent`} size={24} />
+                          <action.icon className={`${action.color} group-hover:text-white transition-colors duration-300`} size={24} />
                         </div>
                         <div className="flex-1 text-left">
                           <p className="font-semibold text-white text-base">
