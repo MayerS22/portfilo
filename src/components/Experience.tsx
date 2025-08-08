@@ -10,7 +10,7 @@ const Experience = () => {
       title: 'Software Engineer',
       company: 'QueenSoft',
       location: 'Egypt',
-      period: 'Jan. 2025 – Present',
+      period: 'July. 2025 – Present',
       description: 'Full Stack Developer building scalable web applications with modern technologies.',
       technologies: ['Next.js', 'Nest.js', 'PostgreSQL', 'TypeScript', 'React', 'Node.js', 'REST APIs'],
       type: 'work',
@@ -167,23 +167,23 @@ const Experience = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-3xl sm:text-4xl font-bold mb-4"
+            className="mobile-heading mb-4"
           >
             Experience & Education
           </motion.h2>
           <motion.p 
             variants={itemVariants}
-            className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto px-6 sm:px-0"
+            className="mobile-text text-gray-400 max-w-2xl mx-auto px-4 sm:px-0"
           >
             My professional journey and academic background
           </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 px-4 sm:px-0">
+        <div className="mobile-grid-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 px-4 sm:px-0">
           {/* Left Column - Education & Work Experience */}
           <motion.div
             variants={containerVariants}
@@ -192,25 +192,25 @@ const Experience = () => {
             viewport={{ once: true }}
           >
             {/* Education */}
-            <motion.div variants={itemVariants} className="mb-12">
-              <motion.div variants={itemVariants} className="flex items-center mb-8">
-                <GraduationCap className="text-blue-400 mr-3" size={24} />
-                <h3 className="text-xl sm:text-2xl font-bold">Education</h3>
+            <motion.div variants={itemVariants} className="mb-8 sm:mb-12">
+              <motion.div variants={itemVariants} className="flex items-center mb-6 sm:mb-8">
+                <GraduationCap className="text-blue-400 mr-3 mobile-icon" />
+                <h3 className="mobile-heading text-xl sm:text-2xl">Education</h3>
               </motion.div>
 
-              <div className="space-y-6">
+              <div className="mobile-spacing-compact">
                 {education.map((edu, index) => (
                   <motion.div
                     key={index}
                     variants={itemVariants}
-                    className="card p-4 sm:p-6 group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                    className="card mobile-card-compact group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                   >
-                    <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                    <div className="mobile-flex-start gap-4 sm:gap-6">
                       {/* Institution Logo */}
                       <div className="flex-shrink-0 mx-auto sm:mx-0 mb-4 sm:mb-0">
-                        <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl shadow-lg border border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-2xl group-hover:scale-105 transition-all duration-300">
+                        <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-gray-800 to-gray-700 mobile-rounded shadow-lg border border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-2xl group-hover:scale-105 transition-all duration-300">
                           {/* Gradient overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-600/30 rounded-2xl"></div>
+                          <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-600/30 mobile-rounded"></div>
                           
                           {edu.image ? (
                             <Image
@@ -227,24 +227,24 @@ const Experience = () => {
                               }}
                             />
                           ) : null}
-                          <GraduationCap className="relative z-10 w-8 h-8 text-gray-400 group-hover:text-blue-400 transition-colors duration-300" style={{ display: edu.image ? 'none' : 'flex' }} />
+                          <GraduationCap className="relative z-10 w-6 h-6 sm:w-8 sm:h-8 text-gray-400 group-hover:text-blue-400 transition-colors duration-300" style={{ display: edu.image ? 'none' : 'flex' }} />
                         </div>
                       </div>
 
                       {/* Content */}
-                      <div className="flex-1 min-w-0 text-center sm:text-left">
-                        <h4 className="text-base sm:text-lg lg:text-xl font-semibold mb-2 text-white group-hover:text-blue-400 transition-colors duration-300 break-words">
+                      <div className="flex-1 min-w-0 mobile-text-center">
+                        <h4 className="mobile-text font-semibold mb-2 text-white group-hover:text-blue-400 transition-colors duration-300 break-words">
                           {edu.title}
                         </h4>
-                        <div className="flex items-center justify-center sm:justify-start text-gray-400 text-xs sm:text-sm mb-1">
+                        <div className="mobile-flex-center text-gray-400 text-xs sm:text-sm mb-1">
                           <Building size={14} className="mr-2 flex-shrink-0" />
                           <span className="break-words font-medium">{edu.institution}</span>
                         </div>
-                        <div className="flex items-center justify-center sm:justify-start text-gray-400 text-xs sm:text-sm mb-1">
+                        <div className="mobile-flex-center text-gray-400 text-xs sm:text-sm mb-1">
                           <MapPin size={14} className="mr-2 flex-shrink-0" />
                           <span className="break-words">{edu.location}</span>
                         </div>
-                        <div className="flex items-center justify-center sm:justify-start text-gray-400 text-xs sm:text-sm mb-3">
+                        <div className="mobile-flex-center text-gray-400 text-xs sm:text-sm mb-3">
                           <Calendar size={14} className="mr-2 flex-shrink-0" />
                           <span className="break-words">{edu.period}</span>
                         </div>
@@ -260,24 +260,24 @@ const Experience = () => {
 
             {/* Work Experience */}
             <motion.div variants={itemVariants}>
-              <motion.div variants={itemVariants} className="flex items-center mb-8">
-                <Briefcase className="text-blue-400 mr-3" size={24} />
-                <h3 className="text-xl sm:text-2xl font-bold">Work Experience</h3>
+              <motion.div variants={itemVariants} className="flex items-center mb-6 sm:mb-8">
+                <Briefcase className="text-blue-400 mr-3 mobile-icon" />
+                <h3 className="mobile-heading text-xl sm:text-2xl">Work Experience</h3>
               </motion.div>
 
-              <div className="space-y-6 sm:space-y-8">
+              <div className="mobile-spacing-compact">
                 {experiences.map((exp, index) => (
                   <motion.div
                     key={index}
                     variants={itemVariants}
-                    className="card p-4 sm:p-6 relative group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                    className="card mobile-card-compact relative group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                   >
-                    <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                    <div className="mobile-flex-start gap-4 sm:gap-6">
                       {/* Company Logo */}
                       <div className="flex-shrink-0 mx-auto sm:mx-0 mb-4 sm:mb-0">
-                        <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl shadow-lg border border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-2xl group-hover:scale-105 transition-all duration-300">
+                        <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-gray-800 to-gray-700 mobile-rounded shadow-lg border border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-2xl group-hover:scale-105 transition-all duration-300">
                           {/* Gradient overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-600/30 rounded-2xl"></div>
+                          <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-600/30 mobile-rounded"></div>
                           
                           {exp.image ? (
                             <Image
@@ -294,25 +294,25 @@ const Experience = () => {
                               }}
                             />
                           ) : null}
-                          <Building className="relative z-10 w-8 h-8 text-gray-400 group-hover:text-blue-400 transition-colors duration-300" style={{ display: exp.image ? 'none' : 'flex' }} />
+                          <Building className="relative z-10 w-6 h-6 sm:w-8 sm:h-8 text-gray-400 group-hover:text-blue-400 transition-colors duration-300" style={{ display: exp.image ? 'none' : 'flex' }} />
                         </div>
                       </div>
 
                       {/* Content */}
-                      <div className="flex-1 min-w-0 text-center sm:text-left">
+                      <div className="flex-1 min-w-0 mobile-text-center">
                         <div className="mb-3">
-                          <h4 className="text-base sm:text-lg lg:text-xl font-semibold mb-2 text-white group-hover:text-blue-400 transition-colors duration-300 break-words">
+                          <h4 className="mobile-text font-semibold mb-2 text-white group-hover:text-blue-400 transition-colors duration-300 break-words">
                             {exp.title}
                           </h4>
-                          <div className="flex items-center justify-center sm:justify-start text-gray-400 text-xs sm:text-sm mb-1">
+                          <div className="mobile-flex-center text-gray-400 text-xs sm:text-sm mb-1">
                             <Building size={14} className="mr-2 flex-shrink-0" />
                             <span className="break-words font-medium">{exp.company}</span>
                           </div>
-                          <div className="flex items-center justify-center sm:justify-start text-gray-400 text-xs sm:text-sm mb-1">
+                          <div className="mobile-flex-center text-gray-400 text-xs sm:text-sm mb-1">
                             <MapPin size={14} className="mr-2 flex-shrink-0" />
                             <span className="break-words">{exp.location}</span>
                           </div>
-                          <div className="flex items-center justify-center sm:justify-start text-gray-400 text-xs sm:text-sm">
+                          <div className="mobile-flex-center text-gray-400 text-xs sm:text-sm">
                             <Calendar size={14} className="mr-2 flex-shrink-0" />
                             <span className="break-words">{exp.period}</span>
                           </div>
@@ -349,24 +349,24 @@ const Experience = () => {
           >
             {/* Certifications */}
             <motion.div variants={itemVariants}>
-              <motion.div variants={itemVariants} className="flex items-center mb-8">
-                <Award className="text-blue-400 mr-3" size={24} />
-                <h3 className="text-xl sm:text-2xl font-bold">Training </h3>
+              <motion.div variants={itemVariants} className="flex items-center mb-6 sm:mb-8">
+                <Award className="text-blue-400 mr-3 mobile-icon" />
+                <h3 className="mobile-heading text-xl sm:text-2xl">Training </h3>
               </motion.div>
 
-              <div className="space-y-4 mb-8">
+              <div className="mobile-spacing-compact mb-8">
                 {certifications.map((cert, index) => (
                   <motion.div
                     key={index}
                     variants={itemVariants}
-                    className="card p-4 group hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                    className="card mobile-card-compact group hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
                   >
-                    <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-4">
+                    <div className="mobile-flex-start gap-3 sm:gap-4">
                       {/* Certification Logo */}
                       <div className="flex-shrink-0">
-                        <div className="relative w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl shadow-md border border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+                        <div className="relative w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-gray-800 to-gray-700 mobile-rounded shadow-md border border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
                           {/* Gradient overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-600/30 rounded-xl"></div>
+                          <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-600/30 mobile-rounded"></div>
                           
                           {cert.image ? (
                             <Image
@@ -383,13 +383,13 @@ const Experience = () => {
                               }}
                             />
                           ) : null}
-                          <Award className="relative z-10 w-6 h-6 text-gray-400 group-hover:text-blue-400 transition-colors duration-300" style={{ display: cert.image ? 'none' : 'flex' }} />
+                          <Award className="relative z-10 w-5 h-5 sm:w-6 sm:h-6 text-gray-400 group-hover:text-blue-400 transition-colors duration-300" style={{ display: cert.image ? 'none' : 'flex' }} />
                         </div>
                       </div>
 
                       {/* Content */}
-                      <div className="flex-1 min-w-0 text-center sm:text-left">
-                        <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between mb-2">
+                      <div className="flex-1 min-w-0 mobile-text-center">
+                        <div className="mobile-flex-between mb-2">
                           <h4 className="font-semibold text-sm sm:text-base text-white group-hover:text-blue-400 transition-colors duration-300">
                             {cert.title}
                           </h4>
@@ -412,24 +412,24 @@ const Experience = () => {
 
             {/* Courses */}
             <motion.div variants={itemVariants}>
-              <motion.div variants={itemVariants} className="flex items-center mb-8">
-                <Award className="text-blue-400 mr-3" size={24} />
-                <h3 className="text-xl sm:text-2xl font-bold">Courses & Certifications</h3>
+              <motion.div variants={itemVariants} className="flex items-center mb-6 sm:mb-8">
+                <Award className="text-blue-400 mr-3 mobile-icon" />
+                <h3 className="mobile-heading text-xl sm:text-2xl">Courses & Certifications</h3>
               </motion.div>
 
-              <div className="space-y-4">
+              <div className="mobile-spacing-compact">
                 {courses.map((course, index) => (
                   <motion.div
                     key={index}
                     variants={itemVariants}
-                    className="card p-4 group hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                    className="card mobile-card-compact group hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
                   >
-                    <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-4">
+                    <div className="mobile-flex-start gap-3 sm:gap-4">
                       {/* Course Logo */}
                       <div className="flex-shrink-0">
-                        <div className="relative w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl shadow-md border border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+                        <div className="relative w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-gray-800 to-gray-700 mobile-rounded shadow-md border border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
                           {/* Gradient overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-600/30 rounded-xl"></div>
+                          <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-600/30 mobile-rounded"></div>
                           
                           {course.image ? (
                             <Image
@@ -446,13 +446,13 @@ const Experience = () => {
                               }}
                             />
                           ) : null}
-                          <Award className="relative z-10 w-6 h-6 text-gray-400 group-hover:text-blue-400 transition-colors duration-300" style={{ display: course.image ? 'none' : 'flex' }} />
+                          <Award className="relative z-10 w-5 h-5 sm:w-6 sm:h-6 text-gray-400 group-hover:text-blue-400 transition-colors duration-300" style={{ display: course.image ? 'none' : 'flex' }} />
                         </div>
                       </div>
 
                       {/* Content */}
-                      <div className="flex-1 min-w-0 text-center sm:text-left">
-                        <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between mb-2">
+                      <div className="flex-1 min-w-0 mobile-text-center">
+                        <div className="mobile-flex-between mb-2">
                           <h4 className="font-semibold text-sm sm:text-base text-white group-hover:text-blue-400 transition-colors duration-300">
                             {course.title}
                           </h4>

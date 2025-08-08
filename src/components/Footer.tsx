@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail, Heart, ArrowUp, Code, Globe, Smartphone } from 'lucide-react'
+import { Github, Linkedin, Mail, Heart, Code, Globe, Monitor, Server } from 'lucide-react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -40,14 +40,10 @@ const Footer = () => {
   ]
 
   const services = [
-    { name: 'Web Development', icon: Globe },
-    { name: 'Mobile Development', icon: Smartphone },
+    { name: 'Frontend Development', icon: Monitor },
+    { name: 'Backend Development', icon: Server },
     { name: 'Full-Stack Solutions', icon: Code },
   ]
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
 
   return (
     <footer className="bg-gray-900/95 backdrop-blur-sm text-white relative overflow-hidden">
@@ -72,7 +68,7 @@ const Footer = () => {
               </h3>
               <p className="text-base sm:text-lg text-gray-400 mb-8 leading-relaxed">
                 Full-stack developer passionate about creating exceptional digital experiences. 
-                Specializing in modern web technologies, mobile development, and scalable software solutions.
+                Specializing in modern web technologies and scalable software solutions.
               </p>
               
               {/* Enhanced Social Links */}
@@ -167,17 +163,6 @@ const Footer = () => {
               <p className="text-gray-400 text-sm flex items-center">
                 Made with <Heart size={16} className="mx-1 text-red-500 animate-pulse" /> using Next.js & Tailwind CSS
               </p>
-              
-              {/* Scroll to Top Button */}
-              <motion.button
-                onClick={scrollToTop}
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-10 h-10 bg-gray-800/50 backdrop-blur-sm rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 border border-gray-700/50 hover:border-gray-600/50"
-                title="Scroll to top"
-              >
-                <ArrowUp size={18} />
-              </motion.button>
             </div>
           </div>
         </motion.div>
