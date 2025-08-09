@@ -361,9 +361,9 @@ const Experience = () => {
                     variants={itemVariants}
                     className="card mobile-card-compact group hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
                   >
-                    <div className="mobile-flex-start gap-3 sm:gap-4">
+                    <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4">
                       {/* Certification Logo */}
-                      <div className="flex-shrink-0">
+                      <div className="flex-shrink-0 mx-auto sm:mx-0">
                         <div className="relative w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-gray-800 to-gray-700 mobile-rounded shadow-md border border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
                           {/* Gradient overlay */}
                           <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-600/30 mobile-rounded"></div>
@@ -389,7 +389,7 @@ const Experience = () => {
 
                       {/* Content */}
                       <div className="flex-1 min-w-0 mobile-text-center">
-                        <div className="mobile-flex-between mb-2">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
                           <h4 className="font-semibold text-sm sm:text-base text-white group-hover:text-blue-400 transition-colors duration-300">
                             {cert.title}
                           </h4>
@@ -424,9 +424,9 @@ const Experience = () => {
                     variants={itemVariants}
                     className="card mobile-card-compact group hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
                   >
-                    <div className="mobile-flex-start gap-3 sm:gap-4">
+                    <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4">
                       {/* Course Logo */}
-                      <div className="flex-shrink-0">
+                      <div className="flex-shrink-0 mx-auto sm:mx-0">
                         <div className="relative w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-gray-800 to-gray-700 mobile-rounded shadow-md border border-gray-600/50 flex items-center justify-center overflow-hidden group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
                           {/* Gradient overlay */}
                           <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-600/30 mobile-rounded"></div>
@@ -452,7 +452,7 @@ const Experience = () => {
 
                       {/* Content */}
                       <div className="flex-1 min-w-0 mobile-text-center">
-                        <div className="mobile-flex-between mb-2">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
                           <h4 className="font-semibold text-sm sm:text-base text-white group-hover:text-blue-400 transition-colors duration-300">
                             {course.title}
                           </h4>
