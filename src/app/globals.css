@@ -53,6 +53,8 @@
 @layer components {
   .gradient-text {
     @apply bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent;
+    -webkit-background-clip: text; /* Ensure gradient text works on iOS Safari */
+    -webkit-text-fill-color: transparent; /* Ensure text remains visible with gradient on iOS */
   }
   
   .card {

@@ -120,7 +120,7 @@ const SplashPage = ({ onComplete }: SplashPageProps) => {
           variants={itemVariants}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold mb-6 sm:mb-8"
         >
-          <span className="gradient-text">Mayer Frieg</span>
+          <span className="gradient-text text-white sm:text-transparent">Mayer Frieg</span>
         </motion.h1>
 
         <motion.h2
